@@ -1,0 +1,81 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075133",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "chi_dao_tuyen",
+  "fields": [
+    {
+      "fieldName": "maCdt",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "soQuyetDinh",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ngayQuyetDinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "soHD",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ngayHD",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lyDoCT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noiDung",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noiCongTac",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayBatDau",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ngayKetThuc",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ghiChu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noiDungHoTro",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "baoCaoTaiChinh",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ChiDaoTuyen",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "lyDoCongTac",
+      "otherEntityRelationshipName": "chiDaoTuyen",
+      "relationshipName": "lyDoCongTac",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "nhanVienTiepNhan",
+      "otherEntityRelationshipName": "chiDaoTuyen",
+      "relationshipName": "nhanVienTiepNhan",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

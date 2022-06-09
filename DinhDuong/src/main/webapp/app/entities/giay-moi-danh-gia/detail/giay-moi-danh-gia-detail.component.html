@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="giayMoiDanhGia">
+      <h2 data-cy="giayMoiDanhGiaDetailsHeading"><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.detail.title">Giay Moi Danh Gia</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.maNguoiTao">Ma Nguoi Tao</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.maNguoiTao }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.thoiGianChiDinh">Thoi Gian Chi Dinh</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.thoiGianChiDinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.chuanDoan">Chuan Doan</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.chuanDoan }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.chuanDoanPhu">Chuan Doan Phu</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.chuanDoanPhu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.guiTu">Gui Tu</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.guiTu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.guiDen">Gui Den</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.guiDen }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.moi">Moi</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.moi }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.noiDungHoiChuan">Noi Dung Hoi Chuan</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.noiDungHoiChuan }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.hoiChuanLan">Hoi Chuan Lan</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.hoiChuanLan }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.thoiGianHoiChuan">Thoi Gian Hoi Chuan</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.thoiGianHoiChuan | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.giayMoiDanhGia.trangThai">Trang Thai</span></dt>
+        <dd>
+          <span>{{ giayMoiDanhGia.trangThai }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/giay-moi-danh-gia', giayMoiDanhGia.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

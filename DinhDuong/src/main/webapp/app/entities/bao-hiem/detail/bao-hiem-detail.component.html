@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="baoHiem">
+      <h2 data-cy="baoHiemDetailsHeading"><span jhiTranslate="dinhDuongApp.baoHiem.detail.title">Bao Hiem</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ baoHiem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoHiem.maTheBHYT">Ma The BHYT</span></dt>
+        <dd>
+          <span>{{ baoHiem.maTheBHYT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoHiem.doiTuong">Doi Tuong</span></dt>
+        <dd>
+          <span>{{ baoHiem.doiTuong }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoHiem.baoHiemThanhToan">Bao Hiem Thanh Toan</span></dt>
+        <dd>
+          <span>{{ baoHiem.baoHiemThanhToan }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoHiem.hoaDon">Hoa Don</span></dt>
+        <dd>
+          <div *ngIf="baoHiem.hoaDon">
+            <a [routerLink]="['/hoa-don', baoHiem.hoaDon?.id, 'view']">{{ baoHiem.hoaDon?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bao-hiem', baoHiem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

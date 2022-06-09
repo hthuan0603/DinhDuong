@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity TTSanglocVaDanhGiaDD.
+    -->
+    <changeSet id="20220609025539-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="danh_gia_can_thiepdd_id"
+                                 baseTableName="tt_sangloc_va_danh_gia_dd"
+                                 constraintName="fk_tt_sangloc_va_danh_gia_dd__danh_gia_can_thiepdd_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="danh_gia_can_thiep_dd"/>
+    </changeSet>
+</databaseChangeLog>

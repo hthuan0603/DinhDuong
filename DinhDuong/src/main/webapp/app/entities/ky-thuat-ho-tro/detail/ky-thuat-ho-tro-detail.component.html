@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="kyThuatHoTro">
+      <h2 data-cy="kyThuatHoTroDetailsHeading"><span jhiTranslate="dinhDuongApp.kyThuatHoTro.detail.title">Ky Thuat Ho Tro</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ kyThuatHoTro.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.kyThuatHoTro.maKyThuat">Ma Ky Thuat</span></dt>
+        <dd>
+          <span>{{ kyThuatHoTro.maKyThuat }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.kyThuatHoTro.tenKyThuat">Ten Ky Thuat</span></dt>
+        <dd>
+          <span>{{ kyThuatHoTro.tenKyThuat }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.kyThuatHoTro.thuTuSX">Thu Tu SX</span></dt>
+        <dd>
+          <span>{{ kyThuatHoTro.thuTuSX }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.kyThuatHoTro.hoTro">Ho Tro</span></dt>
+        <dd>
+          <div *ngIf="kyThuatHoTro.hoTro">
+            <a [routerLink]="['/ho-tro', kyThuatHoTro.hoTro?.id, 'view']">{{ kyThuatHoTro.hoTro?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ky-thuat-ho-tro', kyThuatHoTro.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

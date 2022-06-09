@@ -1,0 +1,124 @@
+<div>
+  <h2 id="page-heading" data-cy="DanhGiaCanThiepDDHeading">
+    <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.home.title">Danh Gia Can Thiep DDS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-danh-gia-can-thiep-dd"
+        [routerLink]="['/danh-gia-can-thiep-dd/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.home.createLabel"> Create a new Danh Gia Can Thiep DD </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="danhGiaCanThiepDDS?.length === 0">
+    <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.home.notFound">No danhGiaCanThiepDDS found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="danhGiaCanThiepDDS && danhGiaCanThiepDDS.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.chuanDoanLS">Chuan Doan LS</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.bSDieuTri">B S Dieu Tri</span></th>
+          <th scope="col">
+            <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.thayDoiCanNangTrong1Thang">Thay Doi Can Nang Trong 1 Thang</span>
+          </th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCN">Danh Gia CN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.khauPhanAn">Khau Phan An</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaKPA">Danh Gia KPA</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.trieuChungTieuHoa">Trieu Chung Tieu Hoa</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.mucDo">Muc Do</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaMD">Danh Gia MD</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.giamChucNangHoatDong">Giam Chuc Nang Hoat Dong</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCNHD">Danh Gia CNHD</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.stress">Stress</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaStress">Danh Gia Stress</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.refeeding">Refeeding</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaRefeeding">Danh Gia Refeeding</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.tongDiem">Tong Diem</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.phieuSuatAn">Phieu Suat An</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.toaThuoc">Toa Thuoc</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let danhGiaCanThiepDD of danhGiaCanThiepDDS; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/danh-gia-can-thiep-dd', danhGiaCanThiepDD.id, 'view']">{{ danhGiaCanThiepDD.id }}</a>
+          </td>
+          <td>{{ danhGiaCanThiepDD.maBN }}</td>
+          <td>{{ danhGiaCanThiepDD.chuanDoanLS }}</td>
+          <td>{{ danhGiaCanThiepDD.bSDieuTri }}</td>
+          <td>{{ danhGiaCanThiepDD.thayDoiCanNangTrong1Thang }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaCN }}</td>
+          <td>{{ danhGiaCanThiepDD.khauPhanAn }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaKPA }}</td>
+          <td>{{ danhGiaCanThiepDD.trieuChungTieuHoa }}</td>
+          <td>{{ danhGiaCanThiepDD.mucDo }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaMD }}</td>
+          <td>{{ danhGiaCanThiepDD.giamChucNangHoatDong }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaCNHD }}</td>
+          <td>{{ danhGiaCanThiepDD.stress }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaStress }}</td>
+          <td>{{ danhGiaCanThiepDD.refeeding }}</td>
+          <td>{{ danhGiaCanThiepDD.danhGiaRefeeding }}</td>
+          <td>{{ danhGiaCanThiepDD.tongDiem }}</td>
+          <td>
+            <div *ngIf="danhGiaCanThiepDD.phieuSuatAn">
+              <a [routerLink]="['/phieu-suat-an', danhGiaCanThiepDD.phieuSuatAn?.id, 'view']">{{ danhGiaCanThiepDD.phieuSuatAn?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="danhGiaCanThiepDD.toaThuoc">
+              <a [routerLink]="['/toa-thuoc', danhGiaCanThiepDD.toaThuoc?.id, 'view']">{{ danhGiaCanThiepDD.toaThuoc?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/danh-gia-can-thiep-dd', danhGiaCanThiepDD.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/danh-gia-can-thiep-dd', danhGiaCanThiepDD.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(danhGiaCanThiepDD)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

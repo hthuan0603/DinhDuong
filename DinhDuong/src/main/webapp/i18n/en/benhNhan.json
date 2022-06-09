@@ -1,0 +1,43 @@
+{
+  "dinhDuongApp": {
+    "benhNhan": {
+      "home": {
+        "title": "Benh Nhans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Benh Nhan",
+        "createOrEditLabel": "Create or edit a Benh Nhan",
+        "notFound": "No Benh Nhans found"
+      },
+      "created": "A new Benh Nhan is created with identifier {{ param }}",
+      "updated": "A Benh Nhan is updated with identifier {{ param }}",
+      "deleted": "A Benh Nhan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Benh Nhan {{ id }}?"
+      },
+      "detail": {
+        "title": "Benh Nhan"
+      },
+      "id": "ID",
+      "hoTen": "Ho Ten",
+      "maBN": "Ma BN",
+      "ngaySinh": "Ngay Sinh",
+      "gioiTinh": "Gioi Tinh",
+      "diaChi": "Dia Chi",
+      "ngheNghiep": "Nghe Nghiep",
+      "chieuCao": "Chieu Cao",
+      "canHT": "Can HT",
+      "canTC": "Can TC",
+      "vongCT": "Vong CT",
+      "bMI": "B MI",
+      "maTheBHYT": "Ma The BHYT",
+      "sDT": "S DT",
+      "baoHiem": "Bao Hiem",
+      "dieuTri": "Dieu Tri",
+      "tTSanglocVaDanhGiaDD": "T T Sangloc Va Danh Gia DD",
+      "hoaDon": "Hoa Don",
+      "danhGiaCanThiepDD": "Danh Gia Can Thiep DD",
+      "phieuSuatAn": "Phieu Suat An",
+      "giayMoiDanhGia": "Giay Moi Danh Gia"
+    }
+  }
+}

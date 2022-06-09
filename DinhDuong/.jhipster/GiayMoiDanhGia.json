@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025540",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "giay_moi_danh_gia",
+  "fields": [
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maNguoiTao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thoiGianChiDinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "chuanDoan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chuanDoanPhu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "guiTu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "guiDen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "moi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noiDungHoiChuan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hoiChuanLan",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thoiGianHoiChuan",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "trangThai",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "GiayMoiDanhGia",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

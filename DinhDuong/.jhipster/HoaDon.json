@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025541",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hoa_don",
+  "fields": [
+    {
+      "fieldName": "noiDung",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTheBHYT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maDV",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tamUng",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "daNop",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tong",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "HoaDon",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

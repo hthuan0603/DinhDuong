@@ -1,0 +1,118 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025537",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "benh_nhan",
+  "fields": [
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngaySinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "gioiTinh",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "diaChi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngheNghiep",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chieuCao",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "canHT",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "canTC",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "vongCT",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "bMI",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "maTheBHYT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sDT",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BenhNhan",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "baoHiem",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "baoHiem",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "dieuTri",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "dieuTri",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "tTSanglocVaDanhGiaDD",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "tTSanglocVaDanhGiaDD",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "hoaDon",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "hoaDon",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "danhGiaCanThiepDD",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "danhGiaCanThiepDD",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "phieuSuatAn",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "phieuSuatAn",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "giayMoiDanhGia",
+      "otherEntityRelationshipName": "benhNhan",
+      "ownerSide": true,
+      "relationshipName": "giayMoiDanhGia",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-thuoc-heading" data-cy="ThuocCreateUpdateHeading" jhiTranslate="dinhDuongApp.thuoc.home.createOrEditLabel">
+        Create or edit a Thuoc
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.tenThuoc" for="field_tenThuoc">Ten Thuoc</label>
+          <input type="text" class="form-control" name="tenThuoc" id="field_tenThuoc" data-cy="tenThuoc" formControlName="tenThuoc" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.duongDung" for="field_duongDung">Duong Dung</label>
+          <input type="text" class="form-control" name="duongDung" id="field_duongDung" data-cy="duongDung" formControlName="duongDung" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.soLuong" for="field_soLuong">So Luong</label>
+          <input type="number" class="form-control" name="soLuong" id="field_soLuong" data-cy="soLuong" formControlName="soLuong" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.cachDung" for="field_cachDung">Cach Dung</label>
+          <input type="text" class="form-control" name="cachDung" id="field_cachDung" data-cy="cachDung" formControlName="cachDung" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.hoatChat" for="field_hoatChat">Hoat Chat</label>
+          <input type="text" class="form-control" name="hoatChat" id="field_hoatChat" data-cy="hoatChat" formControlName="hoatChat" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.dVT" for="field_dVT">D VT</label>
+          <input type="text" class="form-control" name="dVT" id="field_dVT" data-cy="dVT" formControlName="dVT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.donGia" for="field_donGia">Don Gia</label>
+          <input type="number" class="form-control" name="donGia" id="field_donGia" data-cy="donGia" formControlName="donGia" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.thanhTien" for="field_thanhTien">Thanh Tien</label>
+          <input type="number" class="form-control" name="thanhTien" id="field_thanhTien" data-cy="thanhTien" formControlName="thanhTien" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.loaiTTCu" for="field_loaiTTCu">Loai TT Cu</label>
+          <input type="text" class="form-control" name="loaiTTCu" id="field_loaiTTCu" data-cy="loaiTTCu" formControlName="loaiTTCu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.loaiTTMoi" for="field_loaiTTMoi">Loai TT Moi</label>
+          <input type="text" class="form-control" name="loaiTTMoi" id="field_loaiTTMoi" data-cy="loaiTTMoi" formControlName="loaiTTMoi" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.lieuDung" for="field_lieuDung">Lieu Dung</label>
+          <input type="text" class="form-control" name="lieuDung" id="field_lieuDung" data-cy="lieuDung" formControlName="lieuDung" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.thuoc.kS" for="field_kS">K S</label>
+          <input type="text" class="form-control" name="kS" id="field_kS" data-cy="kS" formControlName="kS" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

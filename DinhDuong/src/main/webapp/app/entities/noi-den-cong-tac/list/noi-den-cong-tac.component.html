@@ -1,0 +1,114 @@
+<div>
+  <h2 id="page-heading" data-cy="NoiDenCongTacHeading">
+    <span jhiTranslate="dinhDuongApp.noiDenCongTac.home.title">Noi Den Cong Tacs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.noiDenCongTac.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-noi-den-cong-tac"
+        [routerLink]="['/noi-den-cong-tac/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.noiDenCongTac.home.createLabel"> Create a new Noi Den Cong Tac </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="noiDenCongTacs?.length === 0">
+    <span jhiTranslate="dinhDuongApp.noiDenCongTac.home.notFound">No noiDenCongTacs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="noiDenCongTacs && noiDenCongTacs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="maNoiDen">
+            <span jhiTranslate="dinhDuongApp.noiDenCongTac.maNoiDen">Ma Noi Den</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tenNoiDen">
+            <span jhiTranslate="dinhDuongApp.noiDenCongTac.tenNoiDen">Ten Noi Den</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="thuTuSX">
+            <span jhiTranslate="dinhDuongApp.noiDenCongTac.thuTuSX">Thu Tu SX</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="chiDaoTuyen.id">
+            <span jhiTranslate="dinhDuongApp.noiDenCongTac.chiDaoTuyen">Chi Dao Tuyen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let noiDenCongTac of noiDenCongTacs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/noi-den-cong-tac', noiDenCongTac.id, 'view']">{{ noiDenCongTac.id }}</a>
+          </td>
+          <td>{{ noiDenCongTac.maNoiDen }}</td>
+          <td>{{ noiDenCongTac.tenNoiDen }}</td>
+          <td>{{ noiDenCongTac.thuTuSX }}</td>
+          <td>
+            <div *ngIf="noiDenCongTac.chiDaoTuyen">
+              <a [routerLink]="['/chi-dao-tuyen', noiDenCongTac.chiDaoTuyen?.id, 'view']">{{ noiDenCongTac.chiDaoTuyen?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/noi-den-cong-tac', noiDenCongTac.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/noi-den-cong-tac', noiDenCongTac.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(noiDenCongTac)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="noiDenCongTacs && noiDenCongTacs.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

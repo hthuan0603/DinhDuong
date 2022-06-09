@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="thuoc">
+      <h2 data-cy="thuocDetailsHeading"><span jhiTranslate="dinhDuongApp.thuoc.detail.title">Thuoc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ thuoc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.tenThuoc">Ten Thuoc</span></dt>
+        <dd>
+          <span>{{ thuoc.tenThuoc }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.duongDung">Duong Dung</span></dt>
+        <dd>
+          <span>{{ thuoc.duongDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.soLuong">So Luong</span></dt>
+        <dd>
+          <span>{{ thuoc.soLuong }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.cachDung">Cach Dung</span></dt>
+        <dd>
+          <span>{{ thuoc.cachDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.hoatChat">Hoat Chat</span></dt>
+        <dd>
+          <span>{{ thuoc.hoatChat }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.dVT">D VT</span></dt>
+        <dd>
+          <span>{{ thuoc.dVT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.donGia">Don Gia</span></dt>
+        <dd>
+          <span>{{ thuoc.donGia }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.thanhTien">Thanh Tien</span></dt>
+        <dd>
+          <span>{{ thuoc.thanhTien }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.loaiTTCu">Loai TT Cu</span></dt>
+        <dd>
+          <span>{{ thuoc.loaiTTCu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.loaiTTMoi">Loai TT Moi</span></dt>
+        <dd>
+          <span>{{ thuoc.loaiTTMoi }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.lieuDung">Lieu Dung</span></dt>
+        <dd>
+          <span>{{ thuoc.lieuDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.thuoc.kS">K S</span></dt>
+        <dd>
+          <span>{{ thuoc.kS }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/thuoc', thuoc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

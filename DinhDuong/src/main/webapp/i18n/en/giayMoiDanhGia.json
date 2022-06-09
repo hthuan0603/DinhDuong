@@ -1,0 +1,35 @@
+{
+  "dinhDuongApp": {
+    "giayMoiDanhGia": {
+      "home": {
+        "title": "Giay Moi Danh Gias",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Giay Moi Danh Gia",
+        "createOrEditLabel": "Create or edit a Giay Moi Danh Gia",
+        "notFound": "No Giay Moi Danh Gias found"
+      },
+      "created": "A new Giay Moi Danh Gia is created with identifier {{ param }}",
+      "updated": "A Giay Moi Danh Gia is updated with identifier {{ param }}",
+      "deleted": "A Giay Moi Danh Gia is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Giay Moi Danh Gia {{ id }}?"
+      },
+      "detail": {
+        "title": "Giay Moi Danh Gia"
+      },
+      "id": "ID",
+      "maBN": "Ma BN",
+      "maNguoiTao": "Ma Nguoi Tao",
+      "thoiGianChiDinh": "Thoi Gian Chi Dinh",
+      "chuanDoan": "Chuan Doan",
+      "chuanDoanPhu": "Chuan Doan Phu",
+      "guiTu": "Gui Tu",
+      "guiDen": "Gui Den",
+      "moi": "Moi",
+      "noiDungHoiChuan": "Noi Dung Hoi Chuan",
+      "hoiChuanLan": "Hoi Chuan Lan",
+      "thoiGianHoiChuan": "Thoi Gian Hoi Chuan",
+      "trangThai": "Trang Thai"
+    }
+  }
+}

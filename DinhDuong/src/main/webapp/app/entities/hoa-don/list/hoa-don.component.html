@@ -1,0 +1,90 @@
+<div>
+  <h2 id="page-heading" data-cy="HoaDonHeading">
+    <span jhiTranslate="dinhDuongApp.hoaDon.home.title">Hoa Dons</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.hoaDon.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-hoa-don"
+        [routerLink]="['/hoa-don/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.hoaDon.home.createLabel"> Create a new Hoa Don </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="hoaDons?.length === 0">
+    <span jhiTranslate="dinhDuongApp.hoaDon.home.notFound">No hoaDons found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="hoaDons && hoaDons.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.noiDung">Noi Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.maTheBHYT">Ma The BHYT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.maDV">Ma DV</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.tamUng">Tam Ung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.daNop">Da Nop</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.hoaDon.tong">Tong</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hoaDon of hoaDons; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/hoa-don', hoaDon.id, 'view']">{{ hoaDon.id }}</a>
+          </td>
+          <td>{{ hoaDon.noiDung }}</td>
+          <td>{{ hoaDon.maBN }}</td>
+          <td>{{ hoaDon.maTheBHYT }}</td>
+          <td>{{ hoaDon.maDV }}</td>
+          <td>{{ hoaDon.tamUng }}</td>
+          <td>{{ hoaDon.daNop }}</td>
+          <td>{{ hoaDon.tong }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/hoa-don', hoaDon.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/hoa-don', hoaDon.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(hoaDon)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

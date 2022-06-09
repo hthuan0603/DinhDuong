@@ -1,0 +1,99 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025542",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "danh_gia_can_thiep_dd",
+  "fields": [
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chuanDoanLS",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bSDieuTri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thayDoiCanNangTrong1Thang",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaCN",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "khauPhanAn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaKPA",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "trieuChungTieuHoa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucDo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaMD",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "giamChucNangHoatDong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaCNHD",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "stress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaStress",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "refeeding",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "danhGiaRefeeding",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tongDiem",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DanhGiaCanThiepDD",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "phieuSuatAn",
+      "otherEntityRelationshipName": "danhGiaCanThiepDD",
+      "ownerSide": true,
+      "relationshipName": "phieuSuatAn",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "toaThuoc",
+      "otherEntityRelationshipName": "danhGiaCanThiepDD",
+      "ownerSide": true,
+      "relationshipName": "toaThuoc",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

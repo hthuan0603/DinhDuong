@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025544",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "thuoc",
+  "fields": [
+    {
+      "fieldName": "tenThuoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "duongDung",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soLuong",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cachDung",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hoatChat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dVT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "donGia",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thanhTien",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "loaiTTCu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loaiTTMoi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lieuDung",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "kS",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Thuoc",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

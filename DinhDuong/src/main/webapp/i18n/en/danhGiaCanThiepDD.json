@@ -1,0 +1,42 @@
+{
+  "dinhDuongApp": {
+    "danhGiaCanThiepDD": {
+      "home": {
+        "title": "Danh Gia Can Thiep DDS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Danh Gia Can Thiep DD",
+        "createOrEditLabel": "Create or edit a Danh Gia Can Thiep DD",
+        "notFound": "No Danh Gia Can Thiep DDS found"
+      },
+      "created": "A new Danh Gia Can Thiep DD is created with identifier {{ param }}",
+      "updated": "A Danh Gia Can Thiep DD is updated with identifier {{ param }}",
+      "deleted": "A Danh Gia Can Thiep DD is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Danh Gia Can Thiep DD {{ id }}?"
+      },
+      "detail": {
+        "title": "Danh Gia Can Thiep DD"
+      },
+      "id": "ID",
+      "maBN": "Ma BN",
+      "chuanDoanLS": "Chuan Doan LS",
+      "bSDieuTri": "B S Dieu Tri",
+      "thayDoiCanNangTrong1Thang": "Thay Doi Can Nang Trong 1 Thang",
+      "danhGiaCN": "Danh Gia CN",
+      "khauPhanAn": "Khau Phan An",
+      "danhGiaKPA": "Danh Gia KPA",
+      "trieuChungTieuHoa": "Trieu Chung Tieu Hoa",
+      "mucDo": "Muc Do",
+      "danhGiaMD": "Danh Gia MD",
+      "giamChucNangHoatDong": "Giam Chuc Nang Hoat Dong",
+      "danhGiaCNHD": "Danh Gia CNHD",
+      "stress": "Stress",
+      "danhGiaStress": "Danh Gia Stress",
+      "refeeding": "Refeeding",
+      "danhGiaRefeeding": "Danh Gia Refeeding",
+      "tongDiem": "Tong Diem",
+      "phieuSuatAn": "Phieu Suat An",
+      "toaThuoc": "Toa Thuoc"
+    }
+  }
+}

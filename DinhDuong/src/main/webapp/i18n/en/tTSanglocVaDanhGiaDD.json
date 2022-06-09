@@ -1,0 +1,35 @@
+{
+  "dinhDuongApp": {
+    "tTSanglocVaDanhGiaDD": {
+      "home": {
+        "title": "TT Sangloc Va Danh Gia DDS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new TT Sangloc Va Danh Gia DD",
+        "createOrEditLabel": "Create or edit a TT Sangloc Va Danh Gia DD",
+        "notFound": "No TT Sangloc Va Danh Gia DDS found"
+      },
+      "created": "A new TT Sangloc Va Danh Gia DD is created with identifier {{ param }}",
+      "updated": "A TT Sangloc Va Danh Gia DD is updated with identifier {{ param }}",
+      "deleted": "A TT Sangloc Va Danh Gia DD is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete TT Sangloc Va Danh Gia DD {{ id }}?"
+      },
+      "detail": {
+        "title": "TT Sangloc Va Danh Gia DD"
+      },
+      "id": "ID",
+      "maBN": "Ma BN",
+      "mangThai": "Mang Thai",
+      "bMI": "B MI",
+      "danhGiaBMI": "Danh Gia BMI",
+      "phanTramCanNangTrong3Thang": "Phan Tram Can Nang Trong 3 Thang",
+      "danhGiaCanNang": "Danh Gia Can Nang",
+      "anUongTrongTuan": "An Uong Trong Tuan",
+      "danhGiaAnUong": "Danh Gia An Uong",
+      "thoiGianChiDinh": "Thoi Gian Chi Dinh",
+      "nguyCoSDD": "Nguy Co SDD",
+      "cheDoAn": "Che Do An",
+      "danhGiaCanThiepDD": "Danh Gia Can Thiep DD"
+    }
+  }
+}

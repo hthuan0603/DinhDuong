@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity BenhNhan.
+    -->
+    <changeSet id="20220609025537-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bao_hiem_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__bao_hiem_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bao_hiem"/>
+
+        <addForeignKeyConstraint baseColumnNames="dieu_tri_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__dieu_tri_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dieu_tri"/>
+
+        <addForeignKeyConstraint baseColumnNames="ttsangloc_va_danh_giadd_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__ttsangloc_va_danh_giadd_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tt_sangloc_va_danh_gia_dd"/>
+
+        <addForeignKeyConstraint baseColumnNames="hoa_don_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__hoa_don_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hoa_don"/>
+
+        <addForeignKeyConstraint baseColumnNames="danh_gia_can_thiepdd_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__danh_gia_can_thiepdd_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="danh_gia_can_thiep_dd"/>
+
+        <addForeignKeyConstraint baseColumnNames="phieu_suat_an_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__phieu_suat_an_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="phieu_suat_an"/>
+
+        <addForeignKeyConstraint baseColumnNames="giay_moi_danh_gia_id"
+                                 baseTableName="benh_nhan"
+                                 constraintName="fk_benh_nhan__giay_moi_danh_gia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="giay_moi_danh_gia"/>
+    </changeSet>
+</databaseChangeLog>

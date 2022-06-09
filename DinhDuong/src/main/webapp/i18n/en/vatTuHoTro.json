@@ -1,0 +1,27 @@
+{
+  "dinhDuongApp": {
+    "vatTuHoTro": {
+      "home": {
+        "title": "Vat Tu Ho Tros",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vat Tu Ho Tro",
+        "createOrEditLabel": "Create or edit a Vat Tu Ho Tro",
+        "notFound": "No Vat Tu Ho Tros found"
+      },
+      "created": "A new Vat Tu Ho Tro is created with identifier {{ param }}",
+      "updated": "A Vat Tu Ho Tro is updated with identifier {{ param }}",
+      "deleted": "A Vat Tu Ho Tro is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vat Tu Ho Tro {{ id }}?"
+      },
+      "detail": {
+        "title": "Vat Tu Ho Tro"
+      },
+      "id": "ID",
+      "maVatTu": "Ma Vat Tu",
+      "tenVatTu": "Ten Vat Tu",
+      "thuTuSX": "Thu Tu SX",
+      "hoTro": "Ho Tro"
+    }
+  }
+}

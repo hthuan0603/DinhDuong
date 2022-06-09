@@ -1,0 +1,33 @@
+{
+  "dinhDuongApp": {
+    "hoTro": {
+      "home": {
+        "title": "Ho Tros",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ho Tro",
+        "createOrEditLabel": "Create or edit a Ho Tro",
+        "notFound": "No Ho Tros found"
+      },
+      "created": "A new Ho Tro is created with identifier {{ param }}",
+      "updated": "A Ho Tro is updated with identifier {{ param }}",
+      "deleted": "A Ho Tro is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ho Tro {{ id }}?"
+      },
+      "detail": {
+        "title": "Ho Tro"
+      },
+      "id": "ID",
+      "maNoiDung": "Ma Noi Dung",
+      "ngayTao": "Ngay Tao",
+      "nhanVienCV": "Nhan Vien CV",
+      "kyThuatHoTro": "Ky Thuat Ho Tro",
+      "vatTuHoTro": "Vat Tu Ho Tro",
+      "soBnKhamDieuTri": "So Bn Kham Dieu Tri",
+      "soBnPhauThuat": "So Bn Phau Thuat",
+      "soCanBoChuyenGiao": "So Can Bo Chuyen Giao",
+      "ketQuaCongTac": "Ket Qua Cong Tac",
+      "chiDaoTuyen": "Chi Dao Tuyen"
+    }
+  }
+}

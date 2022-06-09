@@ -1,0 +1,60 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025545",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "phieu_suat_an",
+  "fields": [
+    {
+      "fieldName": "tenDv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maDV",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTheBHYT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tGSuDung",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "tGChiDinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "chuanDoan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chuanDoanKT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ghiChu",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PhieuSuatAn",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoaDon",
+      "otherEntityRelationshipName": "phieuSuatAn",
+      "ownerSide": true,
+      "relationshipName": "hoaDon",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

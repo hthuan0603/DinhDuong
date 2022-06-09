@@ -1,0 +1,27 @@
+{
+  "dinhDuongApp": {
+    "kyThuatHoTro": {
+      "home": {
+        "title": "Ky Thuat Ho Tros",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ky Thuat Ho Tro",
+        "createOrEditLabel": "Create or edit a Ky Thuat Ho Tro",
+        "notFound": "No Ky Thuat Ho Tros found"
+      },
+      "created": "A new Ky Thuat Ho Tro is created with identifier {{ param }}",
+      "updated": "A Ky Thuat Ho Tro is updated with identifier {{ param }}",
+      "deleted": "A Ky Thuat Ho Tro is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ky Thuat Ho Tro {{ id }}?"
+      },
+      "detail": {
+        "title": "Ky Thuat Ho Tro"
+      },
+      "id": "ID",
+      "maKyThuat": "Ma Ky Thuat",
+      "tenKyThuat": "Ten Ky Thuat",
+      "thuTuSX": "Thu Tu SX",
+      "hoTro": "Ho Tro"
+    }
+  }
+}

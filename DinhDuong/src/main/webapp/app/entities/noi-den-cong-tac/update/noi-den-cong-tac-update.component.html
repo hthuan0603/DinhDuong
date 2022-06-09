@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-noi-den-cong-tac-heading"
+        data-cy="NoiDenCongTacCreateUpdateHeading"
+        jhiTranslate="dinhDuongApp.noiDenCongTac.home.createOrEditLabel"
+      >
+        Create or edit a Noi Den Cong Tac
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.noiDenCongTac.maNoiDen" for="field_maNoiDen">Ma Noi Den</label>
+          <input type="number" class="form-control" name="maNoiDen" id="field_maNoiDen" data-cy="maNoiDen" formControlName="maNoiDen" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.noiDenCongTac.tenNoiDen" for="field_tenNoiDen">Ten Noi Den</label>
+          <input type="text" class="form-control" name="tenNoiDen" id="field_tenNoiDen" data-cy="tenNoiDen" formControlName="tenNoiDen" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.noiDenCongTac.thuTuSX" for="field_thuTuSX">Thu Tu SX</label>
+          <input type="number" class="form-control" name="thuTuSX" id="field_thuTuSX" data-cy="thuTuSX" formControlName="thuTuSX" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.noiDenCongTac.chiDaoTuyen" for="field_chiDaoTuyen">Chi Dao Tuyen</label>
+          <select class="form-control" id="field_chiDaoTuyen" data-cy="chiDaoTuyen" name="chiDaoTuyen" formControlName="chiDaoTuyen">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                chiDaoTuyenOption.id === editForm.get('chiDaoTuyen')!.value?.id ? editForm.get('chiDaoTuyen')!.value : chiDaoTuyenOption
+              "
+              *ngFor="let chiDaoTuyenOption of chiDaoTuyensCollection; trackBy: trackChiDaoTuyenById"
+            >
+              {{ chiDaoTuyenOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

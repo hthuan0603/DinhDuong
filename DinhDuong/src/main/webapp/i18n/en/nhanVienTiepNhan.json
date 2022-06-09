@@ -1,0 +1,26 @@
+{
+  "dinhDuongApp": {
+    "nhanVienTiepNhan": {
+      "home": {
+        "title": "Nhan Vien Tiep Nhans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Nhan Vien Tiep Nhan",
+        "createOrEditLabel": "Create or edit a Nhan Vien Tiep Nhan",
+        "notFound": "No Nhan Vien Tiep Nhans found"
+      },
+      "created": "A new Nhan Vien Tiep Nhan is created with identifier {{ param }}",
+      "updated": "A Nhan Vien Tiep Nhan is updated with identifier {{ param }}",
+      "deleted": "A Nhan Vien Tiep Nhan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nhan Vien Tiep Nhan {{ id }}?"
+      },
+      "detail": {
+        "title": "Nhan Vien Tiep Nhan"
+      },
+      "id": "ID",
+      "maNhanVien": "Ma Nhan Vien",
+      "tenNhanVien": "Ten Nhan Vien",
+      "chiDaoTuyen": "Chi Dao Tuyen"
+    }
+  }
+}

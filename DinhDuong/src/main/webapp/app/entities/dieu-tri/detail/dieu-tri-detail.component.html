@@ -1,0 +1,82 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dieuTri">
+      <h2 data-cy="dieuTriDetailsHeading"><span jhiTranslate="dinhDuongApp.dieuTri.detail.title">Dieu Tri</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dieuTri.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.maDieuTri">Ma Dieu Tri</span></dt>
+        <dd>
+          <span>{{ dieuTri.maDieuTri }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.hoTen">Ho Ten</span></dt>
+        <dd>
+          <span>{{ dieuTri.hoTen }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.maBenhAn">Ma Benh An</span></dt>
+        <dd>
+          <span>{{ dieuTri.maBenhAn }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.tenBSDieuTri">Ten BS Dieu Tri</span></dt>
+        <dd>
+          <span>{{ dieuTri.tenBSDieuTri }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.nguoiNha">Nguoi Nha</span></dt>
+        <dd>
+          <span>{{ dieuTri.nguoiNha }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.giuong">Giuong</span></dt>
+        <dd>
+          <span>{{ dieuTri.giuong }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.maTheBHYT">Ma The BHYT</span></dt>
+        <dd>
+          <span>{{ dieuTri.maTheBHYT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.ngayVaoKhoa">Ngay Vao Khoa</span></dt>
+        <dd>
+          <span>{{ dieuTri.ngayVaoKhoa | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.ngayRaVien">Ngay Ra Vien</span></dt>
+        <dd>
+          <span>{{ dieuTri.ngayRaVien | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.bVChuyen">B V Chuyen</span></dt>
+        <dd>
+          <span>{{ dieuTri.bVChuyen }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.ketQuaDieuTri">Ket Qua Dieu Tri</span></dt>
+        <dd>
+          <span>{{ dieuTri.ketQuaDieuTri }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.lichSuChuyenKhoa">Lich Su Chuyen Khoa</span></dt>
+        <dd>
+          <span>{{ dieuTri.lichSuChuyenKhoa }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.dieuTri.hoaDon">Hoa Don</span></dt>
+        <dd>
+          <div *ngIf="dieuTri.hoaDon">
+            <a [routerLink]="['/hoa-don', dieuTri.hoaDon?.id, 'view']">{{ dieuTri.hoaDon?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dieu-tri', dieuTri.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

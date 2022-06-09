@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-bao-hiem-heading" data-cy="BaoHiemCreateUpdateHeading" jhiTranslate="dinhDuongApp.baoHiem.home.createOrEditLabel">
+        Create or edit a Bao Hiem
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.baoHiem.maTheBHYT" for="field_maTheBHYT">Ma The BHYT</label>
+          <input type="text" class="form-control" name="maTheBHYT" id="field_maTheBHYT" data-cy="maTheBHYT" formControlName="maTheBHYT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.baoHiem.doiTuong" for="field_doiTuong">Doi Tuong</label>
+          <input type="text" class="form-control" name="doiTuong" id="field_doiTuong" data-cy="doiTuong" formControlName="doiTuong" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.baoHiem.baoHiemThanhToan" for="field_baoHiemThanhToan"
+            >Bao Hiem Thanh Toan</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="baoHiemThanhToan"
+            id="field_baoHiemThanhToan"
+            data-cy="baoHiemThanhToan"
+            formControlName="baoHiemThanhToan"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.baoHiem.hoaDon" for="field_hoaDon">Hoa Don</label>
+          <select class="form-control" id="field_hoaDon" data-cy="hoaDon" name="hoaDon" formControlName="hoaDon">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="hoaDonOption.id === editForm.get('hoaDon')!.value?.id ? editForm.get('hoaDon')!.value : hoaDonOption"
+              *ngFor="let hoaDonOption of hoaDonsCollection; trackBy: trackHoaDonById"
+            >
+              {{ hoaDonOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

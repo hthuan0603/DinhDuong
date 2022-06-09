@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025546",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "bao_hiem",
+  "fields": [
+    {
+      "fieldName": "maTheBHYT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "doiTuong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "baoHiemThanhToan",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BaoHiem",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoaDon",
+      "otherEntityRelationshipName": "baoHiem",
+      "ownerSide": true,
+      "relationshipName": "hoaDon",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

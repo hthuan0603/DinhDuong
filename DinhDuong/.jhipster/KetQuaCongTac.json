@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075129",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ket_qua_cong_tac",
+  "fields": [
+    {
+      "fieldName": "maKetQua",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tenKetQua",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thuTuSX",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "KetQuaCongTac",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoTro",
+      "otherEntityRelationshipName": "ketQuaCongTac",
+      "ownerSide": true,
+      "relationshipName": "hoTro",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

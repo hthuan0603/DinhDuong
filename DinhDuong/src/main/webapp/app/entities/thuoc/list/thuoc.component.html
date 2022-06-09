@@ -1,0 +1,90 @@
+<div>
+  <h2 id="page-heading" data-cy="ThuocHeading">
+    <span jhiTranslate="dinhDuongApp.thuoc.home.title">Thuocs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.thuoc.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-thuoc"
+        [routerLink]="['/thuoc/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.thuoc.home.createLabel"> Create a new Thuoc </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="thuocs?.length === 0">
+    <span jhiTranslate="dinhDuongApp.thuoc.home.notFound">No thuocs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="thuocs && thuocs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.tenThuoc">Ten Thuoc</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.duongDung">Duong Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.soLuong">So Luong</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.cachDung">Cach Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.hoatChat">Hoat Chat</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.dVT">D VT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.donGia">Don Gia</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.thanhTien">Thanh Tien</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.loaiTTCu">Loai TT Cu</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.loaiTTMoi">Loai TT Moi</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.lieuDung">Lieu Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.thuoc.kS">K S</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let thuoc of thuocs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/thuoc', thuoc.id, 'view']">{{ thuoc.id }}</a>
+          </td>
+          <td>{{ thuoc.tenThuoc }}</td>
+          <td>{{ thuoc.duongDung }}</td>
+          <td>{{ thuoc.soLuong }}</td>
+          <td>{{ thuoc.cachDung }}</td>
+          <td>{{ thuoc.hoatChat }}</td>
+          <td>{{ thuoc.dVT }}</td>
+          <td>{{ thuoc.donGia }}</td>
+          <td>{{ thuoc.thanhTien }}</td>
+          <td>{{ thuoc.loaiTTCu }}</td>
+          <td>{{ thuoc.loaiTTMoi }}</td>
+          <td>{{ thuoc.lieuDung }}</td>
+          <td>{{ thuoc.kS }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/thuoc', thuoc.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/thuoc', thuoc.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(thuoc)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

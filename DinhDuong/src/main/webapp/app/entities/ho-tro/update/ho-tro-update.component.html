@@ -1,0 +1,157 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-ho-tro-heading" data-cy="HoTroCreateUpdateHeading" jhiTranslate="dinhDuongApp.hoTro.home.createOrEditLabel">
+        Create or edit a Ho Tro
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.maNoiDung" for="field_maNoiDung">Ma Noi Dung</label>
+          <input type="number" class="form-control" name="maNoiDung" id="field_maNoiDung" data-cy="maNoiDung" formControlName="maNoiDung" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.ngayTao" for="field_ngayTao">Ngay Tao</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayTao"
+              data-cy="ngayTao"
+              type="datetime-local"
+              class="form-control"
+              name="ngayTao"
+              formControlName="ngayTao"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.nhanVienCV" for="field_nhanVienCV">Nhan Vien CV</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nhanVienCV"
+            id="field_nhanVienCV"
+            data-cy="nhanVienCV"
+            formControlName="nhanVienCV"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.kyThuatHoTro" for="field_kyThuatHoTro">Ky Thuat Ho Tro</label>
+          <input
+            type="text"
+            class="form-control"
+            name="kyThuatHoTro"
+            id="field_kyThuatHoTro"
+            data-cy="kyThuatHoTro"
+            formControlName="kyThuatHoTro"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.vatTuHoTro" for="field_vatTuHoTro">Vat Tu Ho Tro</label>
+          <input
+            type="text"
+            class="form-control"
+            name="vatTuHoTro"
+            id="field_vatTuHoTro"
+            data-cy="vatTuHoTro"
+            formControlName="vatTuHoTro"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.soBnKhamDieuTri" for="field_soBnKhamDieuTri"
+            >So Bn Kham Dieu Tri</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="soBnKhamDieuTri"
+            id="field_soBnKhamDieuTri"
+            data-cy="soBnKhamDieuTri"
+            formControlName="soBnKhamDieuTri"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.soBnPhauThuat" for="field_soBnPhauThuat">So Bn Phau Thuat</label>
+          <input
+            type="number"
+            class="form-control"
+            name="soBnPhauThuat"
+            id="field_soBnPhauThuat"
+            data-cy="soBnPhauThuat"
+            formControlName="soBnPhauThuat"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.soCanBoChuyenGiao" for="field_soCanBoChuyenGiao"
+            >So Can Bo Chuyen Giao</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="soCanBoChuyenGiao"
+            id="field_soCanBoChuyenGiao"
+            data-cy="soCanBoChuyenGiao"
+            formControlName="soCanBoChuyenGiao"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.ketQuaCongTac" for="field_ketQuaCongTac">Ket Qua Cong Tac</label>
+          <input
+            type="text"
+            class="form-control"
+            name="ketQuaCongTac"
+            id="field_ketQuaCongTac"
+            data-cy="ketQuaCongTac"
+            formControlName="ketQuaCongTac"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoTro.chiDaoTuyen" for="field_chiDaoTuyen">Chi Dao Tuyen</label>
+          <select class="form-control" id="field_chiDaoTuyen" data-cy="chiDaoTuyen" name="chiDaoTuyen" formControlName="chiDaoTuyen">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                chiDaoTuyenOption.id === editForm.get('chiDaoTuyen')!.value?.id ? editForm.get('chiDaoTuyen')!.value : chiDaoTuyenOption
+              "
+              *ngFor="let chiDaoTuyenOption of chiDaoTuyensSharedCollection; trackBy: trackChiDaoTuyenById"
+            >
+              {{ chiDaoTuyenOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

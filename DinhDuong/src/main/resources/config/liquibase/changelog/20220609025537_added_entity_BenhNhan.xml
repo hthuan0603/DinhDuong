@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity BenhNhan.
+    -->
+    <changeSet id="20220609025537-1" author="jhipster">
+        <createTable tableName="benh_nhan">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ho_ten" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ma_bn" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ngay_sinh" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="gioi_tinh" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="dia_chi" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nghe_nghiep" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="chieu_cao" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="can_ht" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="can_tc" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="vong_ct" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="b_mi" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="ma_the_bhyt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="s_dt" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="bao_hiem_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__bao_hiem_id" />
+            </column>
+            <column name="dieu_tri_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__dieu_tri_id" />
+            </column>
+            <column name="ttsangloc_va_danh_giadd_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__ttsangloc_va_danh_giadd_id" />
+            </column>
+            <column name="hoa_don_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__hoa_don_id" />
+            </column>
+            <column name="danh_gia_can_thiepdd_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__danh_gia_can_thiepdd_id" />
+            </column>
+            <column name="phieu_suat_an_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__phieu_suat_an_id" />
+            </column>
+            <column name="giay_moi_danh_gia_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_benh_nhan__giay_moi_danh_gia_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="benh_nhan" columnName="ngay_sinh" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220609025537-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/benh_nhan.csv"
+                  separator=";"
+                  tableName="benh_nhan"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="ho_ten" type="string"/>
+            <column name="ma_bn" type="string"/>
+            <column name="ngay_sinh" type="date"/>
+            <column name="gioi_tinh" type="boolean"/>
+            <column name="dia_chi" type="string"/>
+            <column name="nghe_nghiep" type="string"/>
+            <column name="chieu_cao" type="numeric"/>
+            <column name="can_ht" type="numeric"/>
+            <column name="can_tc" type="numeric"/>
+            <column name="vong_ct" type="numeric"/>
+            <column name="b_mi" type="numeric"/>
+            <column name="ma_the_bhyt" type="string"/>
+            <column name="s_dt" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

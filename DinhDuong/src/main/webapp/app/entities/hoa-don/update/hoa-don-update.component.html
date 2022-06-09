@@ -1,0 +1,69 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-hoa-don-heading" data-cy="HoaDonCreateUpdateHeading" jhiTranslate="dinhDuongApp.hoaDon.home.createOrEditLabel">
+        Create or edit a Hoa Don
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.noiDung" for="field_noiDung">Noi Dung</label>
+          <input type="text" class="form-control" name="noiDung" id="field_noiDung" data-cy="noiDung" formControlName="noiDung" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.maTheBHYT" for="field_maTheBHYT">Ma The BHYT</label>
+          <input type="text" class="form-control" name="maTheBHYT" id="field_maTheBHYT" data-cy="maTheBHYT" formControlName="maTheBHYT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.maDV" for="field_maDV">Ma DV</label>
+          <input type="text" class="form-control" name="maDV" id="field_maDV" data-cy="maDV" formControlName="maDV" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.tamUng" for="field_tamUng">Tam Ung</label>
+          <input type="number" class="form-control" name="tamUng" id="field_tamUng" data-cy="tamUng" formControlName="tamUng" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.daNop" for="field_daNop">Da Nop</label>
+          <input type="number" class="form-control" name="daNop" id="field_daNop" data-cy="daNop" formControlName="daNop" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.hoaDon.tong" for="field_tong">Tong</label>
+          <input type="number" class="form-control" name="tong" id="field_tong" data-cy="tong" formControlName="tong" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

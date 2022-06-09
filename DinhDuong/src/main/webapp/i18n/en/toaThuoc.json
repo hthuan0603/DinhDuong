@@ -1,0 +1,39 @@
+{
+  "dinhDuongApp": {
+    "toaThuoc": {
+      "home": {
+        "title": "Toa Thuocs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Toa Thuoc",
+        "createOrEditLabel": "Create or edit a Toa Thuoc",
+        "notFound": "No Toa Thuocs found"
+      },
+      "created": "A new Toa Thuoc is created with identifier {{ param }}",
+      "updated": "A Toa Thuoc is updated with identifier {{ param }}",
+      "deleted": "A Toa Thuoc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Toa Thuoc {{ id }}?"
+      },
+      "detail": {
+        "title": "Toa Thuoc"
+      },
+      "id": "ID",
+      "iCD10": "I CD 10",
+      "maBA": "Ma BA",
+      "maBN": "Ma BN",
+      "loaiThuoc": "Loai Thuoc",
+      "doiTuong": "Doi Tuong",
+      "tiLe": "Ti Le",
+      "soNgayHenTaiKham": "So Ngay Hen Tai Kham",
+      "capPhieuHenKham": "Cap Phieu Hen Kham",
+      "loiDanBacSi": "Loi Dan Bac Si",
+      "ngayChiDinh": "Ngay Chi Dinh",
+      "ngayDung": "Ngay Dung",
+      "soNgaykeDon": "So Ngayke Don",
+      "khoThuoc": "Kho Thuoc",
+      "thuoc": "Thuoc",
+      "hoaDon": "Hoa Don",
+      "benhNhan": "Benh Nhan"
+    }
+  }
+}

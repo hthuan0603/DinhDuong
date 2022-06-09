@@ -1,0 +1,27 @@
+{
+  "dinhDuongApp": {
+    "lyDoCongTac": {
+      "home": {
+        "title": "Ly Do Cong Tacs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ly Do Cong Tac",
+        "createOrEditLabel": "Create or edit a Ly Do Cong Tac",
+        "notFound": "No Ly Do Cong Tacs found"
+      },
+      "created": "A new Ly Do Cong Tac is created with identifier {{ param }}",
+      "updated": "A Ly Do Cong Tac is updated with identifier {{ param }}",
+      "deleted": "A Ly Do Cong Tac is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ly Do Cong Tac {{ id }}?"
+      },
+      "detail": {
+        "title": "Ly Do Cong Tac"
+      },
+      "id": "ID",
+      "maLyDo": "Ma Ly Do",
+      "tenLyDo": "Ten Ly Do",
+      "thuTuSX": "Thu Tu SX",
+      "chiDaoTuyen": "Chi Dao Tuyen"
+    }
+  }
+}

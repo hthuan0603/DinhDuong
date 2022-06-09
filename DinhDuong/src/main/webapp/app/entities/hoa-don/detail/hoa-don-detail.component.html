@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hoaDon">
+      <h2 data-cy="hoaDonDetailsHeading"><span jhiTranslate="dinhDuongApp.hoaDon.detail.title">Hoa Don</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hoaDon.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.noiDung">Noi Dung</span></dt>
+        <dd>
+          <span>{{ hoaDon.noiDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ hoaDon.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.maTheBHYT">Ma The BHYT</span></dt>
+        <dd>
+          <span>{{ hoaDon.maTheBHYT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.maDV">Ma DV</span></dt>
+        <dd>
+          <span>{{ hoaDon.maDV }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.tamUng">Tam Ung</span></dt>
+        <dd>
+          <span>{{ hoaDon.tamUng }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.daNop">Da Nop</span></dt>
+        <dd>
+          <span>{{ hoaDon.daNop }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoaDon.tong">Tong</span></dt>
+        <dd>
+          <span>{{ hoaDon.tong }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/hoa-don', hoaDon.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

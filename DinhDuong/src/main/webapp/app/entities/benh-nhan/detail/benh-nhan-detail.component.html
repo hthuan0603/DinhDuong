@@ -1,0 +1,124 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="benhNhan">
+      <h2 data-cy="benhNhanDetailsHeading"><span jhiTranslate="dinhDuongApp.benhNhan.detail.title">Benh Nhan</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ benhNhan.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.hoTen">Ho Ten</span></dt>
+        <dd>
+          <span>{{ benhNhan.hoTen }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ benhNhan.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.ngaySinh">Ngay Sinh</span></dt>
+        <dd>
+          <span>{{ benhNhan.ngaySinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.gioiTinh">Gioi Tinh</span></dt>
+        <dd>
+          <span>{{ benhNhan.gioiTinh }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.diaChi">Dia Chi</span></dt>
+        <dd>
+          <span>{{ benhNhan.diaChi }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.ngheNghiep">Nghe Nghiep</span></dt>
+        <dd>
+          <span>{{ benhNhan.ngheNghiep }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.chieuCao">Chieu Cao</span></dt>
+        <dd>
+          <span>{{ benhNhan.chieuCao }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.canHT">Can HT</span></dt>
+        <dd>
+          <span>{{ benhNhan.canHT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.canTC">Can TC</span></dt>
+        <dd>
+          <span>{{ benhNhan.canTC }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.vongCT">Vong CT</span></dt>
+        <dd>
+          <span>{{ benhNhan.vongCT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.bMI">B MI</span></dt>
+        <dd>
+          <span>{{ benhNhan.bMI }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.maTheBHYT">Ma The BHYT</span></dt>
+        <dd>
+          <span>{{ benhNhan.maTheBHYT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.sDT">S DT</span></dt>
+        <dd>
+          <span>{{ benhNhan.sDT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.baoHiem">Bao Hiem</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.baoHiem">
+            <a [routerLink]="['/bao-hiem', benhNhan.baoHiem?.id, 'view']">{{ benhNhan.baoHiem?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.dieuTri">Dieu Tri</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.dieuTri">
+            <a [routerLink]="['/dieu-tri', benhNhan.dieuTri?.id, 'view']">{{ benhNhan.dieuTri?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.tTSanglocVaDanhGiaDD">T T Sangloc Va Danh Gia DD</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.tTSanglocVaDanhGiaDD">
+            <a [routerLink]="['/tt-sangloc-va-danh-gia-dd', benhNhan.tTSanglocVaDanhGiaDD?.id, 'view']">{{
+              benhNhan.tTSanglocVaDanhGiaDD?.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.hoaDon">Hoa Don</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.hoaDon">
+            <a [routerLink]="['/hoa-don', benhNhan.hoaDon?.id, 'view']">{{ benhNhan.hoaDon?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.danhGiaCanThiepDD">Danh Gia Can Thiep DD</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.danhGiaCanThiepDD">
+            <a [routerLink]="['/danh-gia-can-thiep-dd', benhNhan.danhGiaCanThiepDD?.id, 'view']">{{ benhNhan.danhGiaCanThiepDD?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.phieuSuatAn">Phieu Suat An</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.phieuSuatAn">
+            <a [routerLink]="['/phieu-suat-an', benhNhan.phieuSuatAn?.id, 'view']">{{ benhNhan.phieuSuatAn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.benhNhan.giayMoiDanhGia">Giay Moi Danh Gia</span></dt>
+        <dd>
+          <div *ngIf="benhNhan.giayMoiDanhGia">
+            <a [routerLink]="['/giay-moi-danh-gia', benhNhan.giayMoiDanhGia?.id, 'view']">{{ benhNhan.giayMoiDanhGia?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/benh-nhan', benhNhan.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

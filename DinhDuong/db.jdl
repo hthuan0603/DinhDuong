@@ -1,0 +1,198 @@
+
+entity BenhNhan {
+	HoTen String,
+	MaBN String,
+    NgaySinh ZonedDateTime,
+    GioiTinh Boolean,
+    DiaChi String,
+    NgheNghiep String,
+    ChieuCao Float,
+    CanHT Float,
+    CanTC Float,
+    VongCT Float,
+    BMI Float,
+    MaTheBHYT String,
+    SDT Integer
+    
+}
+
+entity DieuTri {
+	MaDieuTri String
+    HoTen String,
+    MaBenhAn String,
+    TenBSDieuTri String,
+    NguoiNha String,
+    Giuong String,
+    MaTheBHYT String,
+    NgayVaoKhoa ZonedDateTime,
+    NgayRaVien ZonedDateTime,
+    BVChuyen String,
+    KetQuaDieuTri String
+    LichSuChuyenKhoa String
+    
+}
+
+entity TTSanglocVaDanhGiaDD {
+	MaBN String,
+	MangThai Boolean,
+    BMI Float,
+    DanhGiaBMI Integer,
+    PhanTramCanNangTrong3Thang Float,
+    DanhGiaCanNang Integer,
+    AnUongTrongTuan String,
+    DanhGiaAnUong Integer,
+    ThoiGianChiDinh ZonedDateTime,
+    NguyCoSDD Boolean,
+    CheDoAn String
+    
+}
+
+entity GiayMoiDanhGia {
+	MaBN String,
+    MaNguoiTao String,
+    ThoiGianChiDinh ZonedDateTime,
+    ChuanDoan String,
+    ChuanDoanPhu String,
+    GuiTu String,
+    GuiDen String,
+    Moi String,
+    NoiDungHoiChuan String,
+    HoiChuanLan Integer,
+    ThoiGianHoiChuan ZonedDateTime,
+    TrangThai Boolean
+}
+
+entity HoaDon  {
+	NoiDung String,
+    MaBN String,
+    MaTheBHYT String,
+    MaDV String,
+  	TamUng Integer,
+    DaNop Integer,
+    Tong Integer
+}
+
+
+entity	DanhGiaCanThiepDD {
+    MaBN String,
+    ChuanDoanLS String,
+	BSDieuTri String,
+    ThayDoiCanNangTrong1Thang String,
+    DanhGiaCN Integer,
+    KhauPhanAn String,
+    DanhGiaKPA Integer,
+    TrieuChungTieuHoa String,
+    MucDo String,
+    DanhGiaMD Integer,
+    GiamChucNangHoatDong String,
+    DanhGiaCNHD Integer,
+    Stress String,
+    DanhGiaStress Integer,
+    Refeeding Boolean, 
+    DanhGiaRefeeding Integer,
+    TongDiem Integer
+}
+
+entity ToaThuoc {
+	ICD10 String,
+    MaBA String,
+    MaBN String,
+    LoaiThuoc String,
+    DoiTuong String,
+    TiLe Float,
+    SoNgayHenTaiKham Integer,
+    CapPhieuHenKham Boolean,
+    LoiDanBacSi String,
+    NgayChiDinh ZonedDateTime,
+    NgayDung ZonedDateTime,
+    SoNgaykeDon Integer,
+    KhoThuoc Boolean
+}
+
+entity Thuoc {
+	TenThuoc String,
+    DuongDung String,
+    SoLuong Integer,
+    CachDung String,
+    HoatChat String,
+    DVT String,
+    DonGia Integer,
+    ThanhTien Integer,
+    LoaiTTCu String,
+    LoaiTTMoi String,
+    LieuDung String,
+    KS String
+    
+}
+
+entity PhieuSuatAn{
+    TenDv String,
+    MaDV String,
+    MaBN String,
+    MaTheBHYT String,
+    TGSuDung ZonedDateTime,
+    TGChiDinh ZonedDateTime,
+    ChuanDoan String,
+    ChuanDoanKT String,
+    GhiChu String
+    
+}
+entity BaoHiem {
+	MaTheBHYT String,
+    DoiTuong String,
+    BaoHiemThanhToan Integer
+}
+
+relationship OneToOne {
+	BenhNhan{BaoHiem} to BaoHiem
+}
+relationship OneToOne {
+	BenhNhan{DieuTri} to DieuTri
+}
+relationship OneToOne {
+	BenhNhan{TTSanglocVaDanhGiaDD} to TTSanglocVaDanhGiaDD
+}
+
+relationship OneToOne {
+	ToaThuoc{Thuoc} to Thuoc
+}
+
+relationship ManyToOne {
+	ToaThuoc {BenhNhan} to BenhNhan
+}
+relationship OneToOne {
+	BenhNhan {HoaDon} to HoaDon
+}
+relationship OneToOne {
+	BenhNhan {DanhGiaCanThiepDD} to DanhGiaCanThiepDD 
+}
+relationship OneToOne {
+	BenhNhan {PhieuSuatAn} to PhieuSuatAn
+}
+relationship OneToOne {
+	BenhNhan{GiayMoiDanhGia} to GiayMoiDanhGia
+}
+relationship OneToOne {
+	ToaThuoc {HoaDon} to HoaDon
+}
+relationship OneToOne {
+	PhieuSuatAn{HoaDon} to HoaDon
+}
+relationship OneToOne {
+	BaoHiem{HoaDon} to HoaDon
+}
+relationship OneToOne {
+	DieuTri {HoaDon} to HoaDon
+}
+relationship OneToOne {
+	DanhGiaCanThiepDD {PhieuSuatAn} to PhieuSuatAn
+}
+relationship OneToOne {
+TTSanglocVaDanhGiaDD {DanhGiaCanThiepDD} to DanhGiaCanThiepDD
+}
+relationship OneToOne{
+	DanhGiaCanThiepDD {ToaThuoc} to ToaThuoc
+}
+relationship OneToOne {
+	BenhNhan {GiayMoiDanhGia} to GiayMoiDanhGia
+}

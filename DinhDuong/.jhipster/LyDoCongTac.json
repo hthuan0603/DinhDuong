@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075128",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ly_do_cong_tac",
+  "fields": [
+    {
+      "fieldName": "maLyDo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tenLyDo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thuTuSX",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LyDoCongTac",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "chiDaoTuyen",
+      "otherEntityRelationshipName": "lyDoCongTac",
+      "relationshipName": "chiDaoTuyen",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,89 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025543",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "toa_thuoc",
+  "fields": [
+    {
+      "fieldName": "iCD10",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBA",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loaiThuoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "doiTuong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tiLe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "soNgayHenTaiKham",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "capPhieuHenKham",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "loiDanBacSi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayChiDinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ngayDung",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "soNgaykeDon",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "khoThuoc",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ToaThuoc",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "thuoc",
+      "otherEntityRelationshipName": "toaThuoc",
+      "ownerSide": true,
+      "relationshipName": "thuoc",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "hoaDon",
+      "otherEntityRelationshipName": "toaThuoc",
+      "ownerSide": true,
+      "relationshipName": "hoaDon",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "benhNhan",
+      "otherEntityRelationshipName": "toaThuoc",
+      "relationshipName": "benhNhan",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

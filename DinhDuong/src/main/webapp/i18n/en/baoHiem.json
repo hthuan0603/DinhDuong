@@ -1,0 +1,27 @@
+{
+  "dinhDuongApp": {
+    "baoHiem": {
+      "home": {
+        "title": "Bao Hiems",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bao Hiem",
+        "createOrEditLabel": "Create or edit a Bao Hiem",
+        "notFound": "No Bao Hiems found"
+      },
+      "created": "A new Bao Hiem is created with identifier {{ param }}",
+      "updated": "A Bao Hiem is updated with identifier {{ param }}",
+      "deleted": "A Bao Hiem is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bao Hiem {{ id }}?"
+      },
+      "detail": {
+        "title": "Bao Hiem"
+      },
+      "id": "ID",
+      "maTheBHYT": "Ma The BHYT",
+      "doiTuong": "Doi Tuong",
+      "baoHiemThanhToan": "Bao Hiem Thanh Toan",
+      "hoaDon": "Hoa Don"
+    }
+  }
+}

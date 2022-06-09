@@ -1,0 +1,72 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025538",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "dieu_tri",
+  "fields": [
+    {
+      "fieldName": "maDieuTri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maBenhAn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tenBSDieuTri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nguoiNha",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giuong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTheBHYT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayVaoKhoa",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ngayRaVien",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "bVChuyen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ketQuaDieuTri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lichSuChuyenKhoa",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DieuTri",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoaDon",
+      "otherEntityRelationshipName": "dieuTri",
+      "ownerSide": true,
+      "relationshipName": "hoaDon",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

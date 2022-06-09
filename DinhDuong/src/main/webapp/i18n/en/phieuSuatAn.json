@@ -1,0 +1,33 @@
+{
+  "dinhDuongApp": {
+    "phieuSuatAn": {
+      "home": {
+        "title": "Phieu Suat Ans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Phieu Suat An",
+        "createOrEditLabel": "Create or edit a Phieu Suat An",
+        "notFound": "No Phieu Suat Ans found"
+      },
+      "created": "A new Phieu Suat An is created with identifier {{ param }}",
+      "updated": "A Phieu Suat An is updated with identifier {{ param }}",
+      "deleted": "A Phieu Suat An is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Phieu Suat An {{ id }}?"
+      },
+      "detail": {
+        "title": "Phieu Suat An"
+      },
+      "id": "ID",
+      "tenDv": "Ten Dv",
+      "maDV": "Ma DV",
+      "maBN": "Ma BN",
+      "maTheBHYT": "Ma The BHYT",
+      "tGSuDung": "T G Su Dung",
+      "tGChiDinh": "T G Chi Dinh",
+      "chuanDoan": "Chuan Doan",
+      "chuanDoanKT": "Chuan Doan KT",
+      "ghiChu": "Ghi Chu",
+      "hoaDon": "Hoa Don"
+    }
+  }
+}

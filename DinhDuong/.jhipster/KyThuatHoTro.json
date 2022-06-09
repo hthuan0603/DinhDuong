@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075130",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ky_thuat_ho_tro",
+  "fields": [
+    {
+      "fieldName": "maKyThuat",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tenKyThuat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thuTuSX",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "KyThuatHoTro",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoTro",
+      "otherEntityRelationshipName": "kyThuatHoTro",
+      "ownerSide": true,
+      "relationshipName": "hoTro",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,110 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="danhGiaCanThiepDD">
+      <h2 data-cy="danhGiaCanThiepDDDetailsHeading">
+        <span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.detail.title">Danh Gia Can Thiep DD</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.chuanDoanLS">Chuan Doan LS</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.chuanDoanLS }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.bSDieuTri">B S Dieu Tri</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.bSDieuTri }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.thayDoiCanNangTrong1Thang">Thay Doi Can Nang Trong 1 Thang</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.thayDoiCanNangTrong1Thang }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCN">Danh Gia CN</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaCN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.khauPhanAn">Khau Phan An</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.khauPhanAn }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaKPA">Danh Gia KPA</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaKPA }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.trieuChungTieuHoa">Trieu Chung Tieu Hoa</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.trieuChungTieuHoa }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.mucDo">Muc Do</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.mucDo }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaMD">Danh Gia MD</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaMD }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.giamChucNangHoatDong">Giam Chuc Nang Hoat Dong</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.giamChucNangHoatDong }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCNHD">Danh Gia CNHD</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaCNHD }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.stress">Stress</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.stress }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaStress">Danh Gia Stress</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaStress }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.refeeding">Refeeding</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.refeeding }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaRefeeding">Danh Gia Refeeding</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.danhGiaRefeeding }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.tongDiem">Tong Diem</span></dt>
+        <dd>
+          <span>{{ danhGiaCanThiepDD.tongDiem }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.phieuSuatAn">Phieu Suat An</span></dt>
+        <dd>
+          <div *ngIf="danhGiaCanThiepDD.phieuSuatAn">
+            <a [routerLink]="['/phieu-suat-an', danhGiaCanThiepDD.phieuSuatAn?.id, 'view']">{{ danhGiaCanThiepDD.phieuSuatAn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.toaThuoc">Toa Thuoc</span></dt>
+        <dd>
+          <div *ngIf="danhGiaCanThiepDD.toaThuoc">
+            <a [routerLink]="['/toa-thuoc', danhGiaCanThiepDD.toaThuoc?.id, 'view']">{{ danhGiaCanThiepDD.toaThuoc?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/danh-gia-can-thiep-dd', danhGiaCanThiepDD.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

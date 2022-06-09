@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075134",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ho_tro",
+  "fields": [
+    {
+      "fieldName": "maNoiDung",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ngayTao",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nhanVienCV",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "kyThuatHoTro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatTuHoTro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soBnKhamDieuTri",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "soBnPhauThuat",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "soCanBoChuyenGiao",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ketQuaCongTac",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "HoTro",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "chiDaoTuyen",
+      "otherEntityRelationshipName": "hoTro",
+      "relationshipName": "chiDaoTuyen",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

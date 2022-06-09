@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075135",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "bao_cao_tai_chinh",
+  "fields": [
+    {
+      "fieldName": "maBaoCao",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "luuTru",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tienAn",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tienO",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tienDiLai",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taiLieu",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "giangDay",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "khac",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BaoCaoTaiChinh",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "chiDaoTuyen",
+      "otherEntityRelationshipName": "baoCaoTaiChinh",
+      "ownerSide": true,
+      "relationshipName": "chiDaoTuyen",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

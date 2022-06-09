@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hoTro">
+      <h2 data-cy="hoTroDetailsHeading"><span jhiTranslate="dinhDuongApp.hoTro.detail.title">Ho Tro</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hoTro.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.maNoiDung">Ma Noi Dung</span></dt>
+        <dd>
+          <span>{{ hoTro.maNoiDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.ngayTao">Ngay Tao</span></dt>
+        <dd>
+          <span>{{ hoTro.ngayTao | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.nhanVienCV">Nhan Vien CV</span></dt>
+        <dd>
+          <span>{{ hoTro.nhanVienCV }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.kyThuatHoTro">Ky Thuat Ho Tro</span></dt>
+        <dd>
+          <span>{{ hoTro.kyThuatHoTro }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.vatTuHoTro">Vat Tu Ho Tro</span></dt>
+        <dd>
+          <span>{{ hoTro.vatTuHoTro }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.soBnKhamDieuTri">So Bn Kham Dieu Tri</span></dt>
+        <dd>
+          <span>{{ hoTro.soBnKhamDieuTri }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.soBnPhauThuat">So Bn Phau Thuat</span></dt>
+        <dd>
+          <span>{{ hoTro.soBnPhauThuat }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.soCanBoChuyenGiao">So Can Bo Chuyen Giao</span></dt>
+        <dd>
+          <span>{{ hoTro.soCanBoChuyenGiao }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.ketQuaCongTac">Ket Qua Cong Tac</span></dt>
+        <dd>
+          <span>{{ hoTro.ketQuaCongTac }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.hoTro.chiDaoTuyen">Chi Dao Tuyen</span></dt>
+        <dd>
+          <div *ngIf="hoTro.chiDaoTuyen">
+            <a [routerLink]="['/chi-dao-tuyen', hoTro.chiDaoTuyen?.id, 'view']">{{ hoTro.chiDaoTuyen?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ho-tro', hoTro.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

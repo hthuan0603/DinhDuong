@@ -1,0 +1,27 @@
+{
+  "dinhDuongApp": {
+    "noiDenCongTac": {
+      "home": {
+        "title": "Noi Den Cong Tacs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Noi Den Cong Tac",
+        "createOrEditLabel": "Create or edit a Noi Den Cong Tac",
+        "notFound": "No Noi Den Cong Tacs found"
+      },
+      "created": "A new Noi Den Cong Tac is created with identifier {{ param }}",
+      "updated": "A Noi Den Cong Tac is updated with identifier {{ param }}",
+      "deleted": "A Noi Den Cong Tac is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Noi Den Cong Tac {{ id }}?"
+      },
+      "detail": {
+        "title": "Noi Den Cong Tac"
+      },
+      "id": "ID",
+      "maNoiDen": "Ma Noi Den",
+      "tenNoiDen": "Ten Noi Den",
+      "thuTuSX": "Thu Tu SX",
+      "chiDaoTuyen": "Chi Dao Tuyen"
+    }
+  }
+}

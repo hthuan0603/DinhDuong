@@ -1,0 +1,146 @@
+<div>
+  <h2 id="page-heading" data-cy="BenhNhanHeading">
+    <span jhiTranslate="dinhDuongApp.benhNhan.home.title">Benh Nhans</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.benhNhan.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-benh-nhan"
+        [routerLink]="['/benh-nhan/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.benhNhan.home.createLabel"> Create a new Benh Nhan </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="benhNhans?.length === 0">
+    <span jhiTranslate="dinhDuongApp.benhNhan.home.notFound">No benhNhans found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="benhNhans && benhNhans.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.hoTen">Ho Ten</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.ngaySinh">Ngay Sinh</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.gioiTinh">Gioi Tinh</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.diaChi">Dia Chi</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.ngheNghiep">Nghe Nghiep</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.chieuCao">Chieu Cao</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.canHT">Can HT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.canTC">Can TC</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.vongCT">Vong CT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.bMI">B MI</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.maTheBHYT">Ma The BHYT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.sDT">S DT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.baoHiem">Bao Hiem</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.dieuTri">Dieu Tri</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.tTSanglocVaDanhGiaDD">T T Sangloc Va Danh Gia DD</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.hoaDon">Hoa Don</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.danhGiaCanThiepDD">Danh Gia Can Thiep DD</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.phieuSuatAn">Phieu Suat An</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.benhNhan.giayMoiDanhGia">Giay Moi Danh Gia</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let benhNhan of benhNhans; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/benh-nhan', benhNhan.id, 'view']">{{ benhNhan.id }}</a>
+          </td>
+          <td>{{ benhNhan.hoTen }}</td>
+          <td>{{ benhNhan.maBN }}</td>
+          <td>{{ benhNhan.ngaySinh | formatMediumDatetime }}</td>
+          <td>{{ benhNhan.gioiTinh }}</td>
+          <td>{{ benhNhan.diaChi }}</td>
+          <td>{{ benhNhan.ngheNghiep }}</td>
+          <td>{{ benhNhan.chieuCao }}</td>
+          <td>{{ benhNhan.canHT }}</td>
+          <td>{{ benhNhan.canTC }}</td>
+          <td>{{ benhNhan.vongCT }}</td>
+          <td>{{ benhNhan.bMI }}</td>
+          <td>{{ benhNhan.maTheBHYT }}</td>
+          <td>{{ benhNhan.sDT }}</td>
+          <td>
+            <div *ngIf="benhNhan.baoHiem">
+              <a [routerLink]="['/bao-hiem', benhNhan.baoHiem?.id, 'view']">{{ benhNhan.baoHiem?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.dieuTri">
+              <a [routerLink]="['/dieu-tri', benhNhan.dieuTri?.id, 'view']">{{ benhNhan.dieuTri?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.tTSanglocVaDanhGiaDD">
+              <a [routerLink]="['/tt-sangloc-va-danh-gia-dd', benhNhan.tTSanglocVaDanhGiaDD?.id, 'view']">{{
+                benhNhan.tTSanglocVaDanhGiaDD?.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.hoaDon">
+              <a [routerLink]="['/hoa-don', benhNhan.hoaDon?.id, 'view']">{{ benhNhan.hoaDon?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.danhGiaCanThiepDD">
+              <a [routerLink]="['/danh-gia-can-thiep-dd', benhNhan.danhGiaCanThiepDD?.id, 'view']">{{ benhNhan.danhGiaCanThiepDD?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.phieuSuatAn">
+              <a [routerLink]="['/phieu-suat-an', benhNhan.phieuSuatAn?.id, 'view']">{{ benhNhan.phieuSuatAn?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="benhNhan.giayMoiDanhGia">
+              <a [routerLink]="['/giay-moi-danh-gia', benhNhan.giayMoiDanhGia?.id, 'view']">{{ benhNhan.giayMoiDanhGia?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/benh-nhan', benhNhan.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/benh-nhan', benhNhan.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(benhNhan)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

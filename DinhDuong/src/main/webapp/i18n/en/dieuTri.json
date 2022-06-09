@@ -1,0 +1,36 @@
+{
+  "dinhDuongApp": {
+    "dieuTri": {
+      "home": {
+        "title": "Dieu Tris",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dieu Tri",
+        "createOrEditLabel": "Create or edit a Dieu Tri",
+        "notFound": "No Dieu Tris found"
+      },
+      "created": "A new Dieu Tri is created with identifier {{ param }}",
+      "updated": "A Dieu Tri is updated with identifier {{ param }}",
+      "deleted": "A Dieu Tri is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dieu Tri {{ id }}?"
+      },
+      "detail": {
+        "title": "Dieu Tri"
+      },
+      "id": "ID",
+      "maDieuTri": "Ma Dieu Tri",
+      "hoTen": "Ho Ten",
+      "maBenhAn": "Ma Benh An",
+      "tenBSDieuTri": "Ten BS Dieu Tri",
+      "nguoiNha": "Nguoi Nha",
+      "giuong": "Giuong",
+      "maTheBHYT": "Ma The BHYT",
+      "ngayVaoKhoa": "Ngay Vao Khoa",
+      "ngayRaVien": "Ngay Ra Vien",
+      "bVChuyen": "B V Chuyen",
+      "ketQuaDieuTri": "Ket Qua Dieu Tri",
+      "lichSuChuyenKhoa": "Lich Su Chuyen Khoa",
+      "hoaDon": "Hoa Don"
+    }
+  }
+}

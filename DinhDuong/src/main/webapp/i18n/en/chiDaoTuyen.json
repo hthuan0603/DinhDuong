@@ -1,0 +1,38 @@
+{
+  "dinhDuongApp": {
+    "chiDaoTuyen": {
+      "home": {
+        "title": "Chi Dao Tuyens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Chi Dao Tuyen",
+        "createOrEditLabel": "Create or edit a Chi Dao Tuyen",
+        "notFound": "No Chi Dao Tuyens found"
+      },
+      "created": "A new Chi Dao Tuyen is created with identifier {{ param }}",
+      "updated": "A Chi Dao Tuyen is updated with identifier {{ param }}",
+      "deleted": "A Chi Dao Tuyen is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Chi Dao Tuyen {{ id }}?"
+      },
+      "detail": {
+        "title": "Chi Dao Tuyen"
+      },
+      "id": "ID",
+      "maCdt": "Ma Cdt",
+      "soQuyetDinh": "So Quyet Dinh",
+      "ngayQuyetDinh": "Ngay Quyet Dinh",
+      "soHD": "So HD",
+      "ngayHD": "Ngay HD",
+      "lyDoCT": "Ly Do CT",
+      "noiDung": "Noi Dung",
+      "noiCongTac": "Noi Cong Tac",
+      "ngayBatDau": "Ngay Bat Dau",
+      "ngayKetThuc": "Ngay Ket Thuc",
+      "ghiChu": "Ghi Chu",
+      "noiDungHoTro": "Noi Dung Ho Tro",
+      "baoCaoTaiChinh": "Bao Cao Tai Chinh",
+      "lyDoCongTac": "Ly Do Cong Tac",
+      "nhanVienTiepNhan": "Nhan Vien Tiep Nhan"
+    }
+  }
+}

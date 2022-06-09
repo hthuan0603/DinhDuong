@@ -1,0 +1,120 @@
+<div>
+  <h2 id="page-heading" data-cy="ToaThuocHeading">
+    <span jhiTranslate="dinhDuongApp.toaThuoc.home.title">Toa Thuocs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.toaThuoc.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-toa-thuoc"
+        [routerLink]="['/toa-thuoc/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.toaThuoc.home.createLabel"> Create a new Toa Thuoc </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="toaThuocs?.length === 0">
+    <span jhiTranslate="dinhDuongApp.toaThuoc.home.notFound">No toaThuocs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="toaThuocs && toaThuocs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.iCD10">I CD 10</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.maBA">Ma BA</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.loaiThuoc">Loai Thuoc</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.doiTuong">Doi Tuong</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.tiLe">Ti Le</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.soNgayHenTaiKham">So Ngay Hen Tai Kham</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.capPhieuHenKham">Cap Phieu Hen Kham</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.loiDanBacSi">Loi Dan Bac Si</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.ngayChiDinh">Ngay Chi Dinh</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.ngayDung">Ngay Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.soNgaykeDon">So Ngayke Don</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.khoThuoc">Kho Thuoc</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.thuoc">Thuoc</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.hoaDon">Hoa Don</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.toaThuoc.benhNhan">Benh Nhan</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let toaThuoc of toaThuocs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/toa-thuoc', toaThuoc.id, 'view']">{{ toaThuoc.id }}</a>
+          </td>
+          <td>{{ toaThuoc.iCD10 }}</td>
+          <td>{{ toaThuoc.maBA }}</td>
+          <td>{{ toaThuoc.maBN }}</td>
+          <td>{{ toaThuoc.loaiThuoc }}</td>
+          <td>{{ toaThuoc.doiTuong }}</td>
+          <td>{{ toaThuoc.tiLe }}</td>
+          <td>{{ toaThuoc.soNgayHenTaiKham }}</td>
+          <td>{{ toaThuoc.capPhieuHenKham }}</td>
+          <td>{{ toaThuoc.loiDanBacSi }}</td>
+          <td>{{ toaThuoc.ngayChiDinh | formatMediumDatetime }}</td>
+          <td>{{ toaThuoc.ngayDung | formatMediumDatetime }}</td>
+          <td>{{ toaThuoc.soNgaykeDon }}</td>
+          <td>{{ toaThuoc.khoThuoc }}</td>
+          <td>
+            <div *ngIf="toaThuoc.thuoc">
+              <a [routerLink]="['/thuoc', toaThuoc.thuoc?.id, 'view']">{{ toaThuoc.thuoc?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="toaThuoc.hoaDon">
+              <a [routerLink]="['/hoa-don', toaThuoc.hoaDon?.id, 'view']">{{ toaThuoc.hoaDon?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="toaThuoc.benhNhan">
+              <a [routerLink]="['/benh-nhan', toaThuoc.benhNhan?.id, 'view']">{{ toaThuoc.benhNhan?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/toa-thuoc', toaThuoc.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/toa-thuoc', toaThuoc.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(toaThuoc)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity TTSanglocVaDanhGiaDD.
+    -->
+    <changeSet id="20220609025539-1" author="jhipster">
+        <createTable tableName="tt_sangloc_va_danh_gia_dd">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ma_bn" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mang_thai" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="b_mi" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="danh_gia_bmi" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="phan_tram_can_nang_trong_3_thang" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="danh_gia_can_nang" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="an_uong_trong_tuan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="danh_gia_an_uong" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="thoi_gian_chi_dinh" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="nguy_co_sdd" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="che_do_an" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="danh_gia_can_thiepdd_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_tt_sangloc_va_danh_gia_dd__danh_gia_can_thiepdd_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="tt_sangloc_va_danh_gia_dd" columnName="thoi_gian_chi_dinh" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220609025539-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/tt_sangloc_va_danh_gia_dd.csv"
+                  separator=";"
+                  tableName="tt_sangloc_va_danh_gia_dd"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="ma_bn" type="string"/>
+            <column name="mang_thai" type="boolean"/>
+            <column name="b_mi" type="numeric"/>
+            <column name="danh_gia_bmi" type="numeric"/>
+            <column name="phan_tram_can_nang_trong_3_thang" type="numeric"/>
+            <column name="danh_gia_can_nang" type="numeric"/>
+            <column name="an_uong_trong_tuan" type="string"/>
+            <column name="danh_gia_an_uong" type="numeric"/>
+            <column name="thoi_gian_chi_dinh" type="date"/>
+            <column name="nguy_co_sdd" type="boolean"/>
+            <column name="che_do_an" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

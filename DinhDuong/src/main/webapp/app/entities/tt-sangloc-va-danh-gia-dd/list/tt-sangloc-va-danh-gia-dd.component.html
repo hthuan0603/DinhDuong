@@ -1,0 +1,108 @@
+<div>
+  <h2 id="page-heading" data-cy="TTSanglocVaDanhGiaDDHeading">
+    <span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.home.title">TT Sangloc Va Danh Gia DDS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-tt-sangloc-va-danh-gia-dd"
+        [routerLink]="['/tt-sangloc-va-danh-gia-dd/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.home.createLabel"> Create a new TT Sangloc Va Danh Gia DD </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="tTSanglocVaDanhGiaDDS?.length === 0">
+    <span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.home.notFound">No tTSanglocVaDanhGiaDDS found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="tTSanglocVaDanhGiaDDS && tTSanglocVaDanhGiaDDS.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.mangThai">Mang Thai</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.bMI">B MI</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaBMI">Danh Gia BMI</span></th>
+          <th scope="col">
+            <span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.phanTramCanNangTrong3Thang">Phan Tram Can Nang Trong 3 Thang</span>
+          </th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaCanNang">Danh Gia Can Nang</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.anUongTrongTuan">An Uong Trong Tuan</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaAnUong">Danh Gia An Uong</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.thoiGianChiDinh">Thoi Gian Chi Dinh</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.nguyCoSDD">Nguy Co SDD</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.cheDoAn">Che Do An</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaCanThiepDD">Danh Gia Can Thiep DD</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tTSanglocVaDanhGiaDD of tTSanglocVaDanhGiaDDS; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/tt-sangloc-va-danh-gia-dd', tTSanglocVaDanhGiaDD.id, 'view']">{{ tTSanglocVaDanhGiaDD.id }}</a>
+          </td>
+          <td>{{ tTSanglocVaDanhGiaDD.maBN }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.mangThai }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.bMI }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.danhGiaBMI }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.phanTramCanNangTrong3Thang }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.danhGiaCanNang }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.anUongTrongTuan }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.danhGiaAnUong }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.thoiGianChiDinh | formatMediumDatetime }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.nguyCoSDD }}</td>
+          <td>{{ tTSanglocVaDanhGiaDD.cheDoAn }}</td>
+          <td>
+            <div *ngIf="tTSanglocVaDanhGiaDD.danhGiaCanThiepDD">
+              <a [routerLink]="['/danh-gia-can-thiep-dd', tTSanglocVaDanhGiaDD.danhGiaCanThiepDD?.id, 'view']">{{
+                tTSanglocVaDanhGiaDD.danhGiaCanThiepDD?.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/tt-sangloc-va-danh-gia-dd', tTSanglocVaDanhGiaDD.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/tt-sangloc-va-danh-gia-dd', tTSanglocVaDanhGiaDD.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(tTSanglocVaDanhGiaDD)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

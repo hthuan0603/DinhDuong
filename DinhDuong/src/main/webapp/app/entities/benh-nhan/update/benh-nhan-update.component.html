@@ -1,0 +1,243 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-benh-nhan-heading" data-cy="BenhNhanCreateUpdateHeading" jhiTranslate="dinhDuongApp.benhNhan.home.createOrEditLabel">
+        Create or edit a Benh Nhan
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.hoTen" for="field_hoTen">Ho Ten</label>
+          <input type="text" class="form-control" name="hoTen" id="field_hoTen" data-cy="hoTen" formControlName="hoTen" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.ngaySinh" for="field_ngaySinh">Ngay Sinh</label>
+          <div class="d-flex">
+            <input
+              id="field_ngaySinh"
+              data-cy="ngaySinh"
+              type="datetime-local"
+              class="form-control"
+              name="ngaySinh"
+              formControlName="ngaySinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.gioiTinh" for="field_gioiTinh">Gioi Tinh</label>
+          <input type="checkbox" class="form-check" name="gioiTinh" id="field_gioiTinh" data-cy="gioiTinh" formControlName="gioiTinh" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.diaChi" for="field_diaChi">Dia Chi</label>
+          <input type="text" class="form-control" name="diaChi" id="field_diaChi" data-cy="diaChi" formControlName="diaChi" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.ngheNghiep" for="field_ngheNghiep">Nghe Nghiep</label>
+          <input
+            type="text"
+            class="form-control"
+            name="ngheNghiep"
+            id="field_ngheNghiep"
+            data-cy="ngheNghiep"
+            formControlName="ngheNghiep"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.chieuCao" for="field_chieuCao">Chieu Cao</label>
+          <input type="number" class="form-control" name="chieuCao" id="field_chieuCao" data-cy="chieuCao" formControlName="chieuCao" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.canHT" for="field_canHT">Can HT</label>
+          <input type="number" class="form-control" name="canHT" id="field_canHT" data-cy="canHT" formControlName="canHT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.canTC" for="field_canTC">Can TC</label>
+          <input type="number" class="form-control" name="canTC" id="field_canTC" data-cy="canTC" formControlName="canTC" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.vongCT" for="field_vongCT">Vong CT</label>
+          <input type="number" class="form-control" name="vongCT" id="field_vongCT" data-cy="vongCT" formControlName="vongCT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.bMI" for="field_bMI">B MI</label>
+          <input type="number" class="form-control" name="bMI" id="field_bMI" data-cy="bMI" formControlName="bMI" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.maTheBHYT" for="field_maTheBHYT">Ma The BHYT</label>
+          <input type="text" class="form-control" name="maTheBHYT" id="field_maTheBHYT" data-cy="maTheBHYT" formControlName="maTheBHYT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.sDT" for="field_sDT">S DT</label>
+          <input type="number" class="form-control" name="sDT" id="field_sDT" data-cy="sDT" formControlName="sDT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.baoHiem" for="field_baoHiem">Bao Hiem</label>
+          <select class="form-control" id="field_baoHiem" data-cy="baoHiem" name="baoHiem" formControlName="baoHiem">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="baoHiemOption.id === editForm.get('baoHiem')!.value?.id ? editForm.get('baoHiem')!.value : baoHiemOption"
+              *ngFor="let baoHiemOption of baoHiemsCollection; trackBy: trackBaoHiemById"
+            >
+              {{ baoHiemOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.dieuTri" for="field_dieuTri">Dieu Tri</label>
+          <select class="form-control" id="field_dieuTri" data-cy="dieuTri" name="dieuTri" formControlName="dieuTri">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="dieuTriOption.id === editForm.get('dieuTri')!.value?.id ? editForm.get('dieuTri')!.value : dieuTriOption"
+              *ngFor="let dieuTriOption of dieuTrisCollection; trackBy: trackDieuTriById"
+            >
+              {{ dieuTriOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.tTSanglocVaDanhGiaDD" for="field_tTSanglocVaDanhGiaDD"
+            >T T Sangloc Va Danh Gia DD</label
+          >
+          <select
+            class="form-control"
+            id="field_tTSanglocVaDanhGiaDD"
+            data-cy="tTSanglocVaDanhGiaDD"
+            name="tTSanglocVaDanhGiaDD"
+            formControlName="tTSanglocVaDanhGiaDD"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                tTSanglocVaDanhGiaDDOption.id === editForm.get('tTSanglocVaDanhGiaDD')!.value?.id
+                  ? editForm.get('tTSanglocVaDanhGiaDD')!.value
+                  : tTSanglocVaDanhGiaDDOption
+              "
+              *ngFor="let tTSanglocVaDanhGiaDDOption of tTSanglocVaDanhGiaDDSCollection; trackBy: trackTTSanglocVaDanhGiaDDById"
+            >
+              {{ tTSanglocVaDanhGiaDDOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.hoaDon" for="field_hoaDon">Hoa Don</label>
+          <select class="form-control" id="field_hoaDon" data-cy="hoaDon" name="hoaDon" formControlName="hoaDon">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="hoaDonOption.id === editForm.get('hoaDon')!.value?.id ? editForm.get('hoaDon')!.value : hoaDonOption"
+              *ngFor="let hoaDonOption of hoaDonsCollection; trackBy: trackHoaDonById"
+            >
+              {{ hoaDonOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.danhGiaCanThiepDD" for="field_danhGiaCanThiepDD"
+            >Danh Gia Can Thiep DD</label
+          >
+          <select
+            class="form-control"
+            id="field_danhGiaCanThiepDD"
+            data-cy="danhGiaCanThiepDD"
+            name="danhGiaCanThiepDD"
+            formControlName="danhGiaCanThiepDD"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                danhGiaCanThiepDDOption.id === editForm.get('danhGiaCanThiepDD')!.value?.id
+                  ? editForm.get('danhGiaCanThiepDD')!.value
+                  : danhGiaCanThiepDDOption
+              "
+              *ngFor="let danhGiaCanThiepDDOption of danhGiaCanThiepDDSCollection; trackBy: trackDanhGiaCanThiepDDById"
+            >
+              {{ danhGiaCanThiepDDOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.phieuSuatAn" for="field_phieuSuatAn">Phieu Suat An</label>
+          <select class="form-control" id="field_phieuSuatAn" data-cy="phieuSuatAn" name="phieuSuatAn" formControlName="phieuSuatAn">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                phieuSuatAnOption.id === editForm.get('phieuSuatAn')!.value?.id ? editForm.get('phieuSuatAn')!.value : phieuSuatAnOption
+              "
+              *ngFor="let phieuSuatAnOption of phieuSuatAnsCollection; trackBy: trackPhieuSuatAnById"
+            >
+              {{ phieuSuatAnOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.benhNhan.giayMoiDanhGia" for="field_giayMoiDanhGia">Giay Moi Danh Gia</label>
+          <select
+            class="form-control"
+            id="field_giayMoiDanhGia"
+            data-cy="giayMoiDanhGia"
+            name="giayMoiDanhGia"
+            formControlName="giayMoiDanhGia"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                giayMoiDanhGiaOption.id === editForm.get('giayMoiDanhGia')!.value?.id
+                  ? editForm.get('giayMoiDanhGia')!.value
+                  : giayMoiDanhGiaOption
+              "
+              *ngFor="let giayMoiDanhGiaOption of giayMoiDanhGiasCollection; trackBy: trackGiayMoiDanhGiaById"
+            >
+              {{ giayMoiDanhGiaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

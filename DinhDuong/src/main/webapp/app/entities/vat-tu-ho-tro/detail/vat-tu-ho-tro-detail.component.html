@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="vatTuHoTro">
+      <h2 data-cy="vatTuHoTroDetailsHeading"><span jhiTranslate="dinhDuongApp.vatTuHoTro.detail.title">Vat Tu Ho Tro</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ vatTuHoTro.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.vatTuHoTro.maVatTu">Ma Vat Tu</span></dt>
+        <dd>
+          <span>{{ vatTuHoTro.maVatTu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.vatTuHoTro.tenVatTu">Ten Vat Tu</span></dt>
+        <dd>
+          <span>{{ vatTuHoTro.tenVatTu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.vatTuHoTro.thuTuSX">Thu Tu SX</span></dt>
+        <dd>
+          <span>{{ vatTuHoTro.thuTuSX }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.vatTuHoTro.hoTro">Ho Tro</span></dt>
+        <dd>
+          <div *ngIf="vatTuHoTro.hoTro">
+            <a [routerLink]="['/ho-tro', vatTuHoTro.hoTro?.id, 'view']">{{ vatTuHoTro.hoTro?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/vat-tu-ho-tro', vatTuHoTro.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

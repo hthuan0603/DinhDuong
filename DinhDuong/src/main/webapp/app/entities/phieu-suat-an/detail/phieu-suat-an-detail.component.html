@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="phieuSuatAn">
+      <h2 data-cy="phieuSuatAnDetailsHeading"><span jhiTranslate="dinhDuongApp.phieuSuatAn.detail.title">Phieu Suat An</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.tenDv">Ten Dv</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.tenDv }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.maDV">Ma DV</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.maDV }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.maTheBHYT">Ma The BHYT</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.maTheBHYT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.tGSuDung">T G Su Dung</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.tGSuDung | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.tGChiDinh">T G Chi Dinh</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.tGChiDinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoan">Chuan Doan</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.chuanDoan }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoanKT">Chuan Doan KT</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.chuanDoanKT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.ghiChu">Ghi Chu</span></dt>
+        <dd>
+          <span>{{ phieuSuatAn.ghiChu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.phieuSuatAn.hoaDon">Hoa Don</span></dt>
+        <dd>
+          <div *ngIf="phieuSuatAn.hoaDon">
+            <a [routerLink]="['/hoa-don', phieuSuatAn.hoaDon?.id, 'view']">{{ phieuSuatAn.hoaDon?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/phieu-suat-an', phieuSuatAn.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

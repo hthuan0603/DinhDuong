@@ -1,0 +1,190 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-toa-thuoc-heading" data-cy="ToaThuocCreateUpdateHeading" jhiTranslate="dinhDuongApp.toaThuoc.home.createOrEditLabel">
+        Create or edit a Toa Thuoc
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.iCD10" for="field_iCD10">I CD 10</label>
+          <input type="text" class="form-control" name="iCD10" id="field_iCD10" data-cy="iCD10" formControlName="iCD10" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.maBA" for="field_maBA">Ma BA</label>
+          <input type="text" class="form-control" name="maBA" id="field_maBA" data-cy="maBA" formControlName="maBA" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.loaiThuoc" for="field_loaiThuoc">Loai Thuoc</label>
+          <input type="text" class="form-control" name="loaiThuoc" id="field_loaiThuoc" data-cy="loaiThuoc" formControlName="loaiThuoc" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.doiTuong" for="field_doiTuong">Doi Tuong</label>
+          <input type="text" class="form-control" name="doiTuong" id="field_doiTuong" data-cy="doiTuong" formControlName="doiTuong" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.tiLe" for="field_tiLe">Ti Le</label>
+          <input type="number" class="form-control" name="tiLe" id="field_tiLe" data-cy="tiLe" formControlName="tiLe" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.soNgayHenTaiKham" for="field_soNgayHenTaiKham"
+            >So Ngay Hen Tai Kham</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="soNgayHenTaiKham"
+            id="field_soNgayHenTaiKham"
+            data-cy="soNgayHenTaiKham"
+            formControlName="soNgayHenTaiKham"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.capPhieuHenKham" for="field_capPhieuHenKham"
+            >Cap Phieu Hen Kham</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="capPhieuHenKham"
+            id="field_capPhieuHenKham"
+            data-cy="capPhieuHenKham"
+            formControlName="capPhieuHenKham"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.loiDanBacSi" for="field_loiDanBacSi">Loi Dan Bac Si</label>
+          <input
+            type="text"
+            class="form-control"
+            name="loiDanBacSi"
+            id="field_loiDanBacSi"
+            data-cy="loiDanBacSi"
+            formControlName="loiDanBacSi"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.ngayChiDinh" for="field_ngayChiDinh">Ngay Chi Dinh</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayChiDinh"
+              data-cy="ngayChiDinh"
+              type="datetime-local"
+              class="form-control"
+              name="ngayChiDinh"
+              formControlName="ngayChiDinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.ngayDung" for="field_ngayDung">Ngay Dung</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayDung"
+              data-cy="ngayDung"
+              type="datetime-local"
+              class="form-control"
+              name="ngayDung"
+              formControlName="ngayDung"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.soNgaykeDon" for="field_soNgaykeDon">So Ngayke Don</label>
+          <input
+            type="number"
+            class="form-control"
+            name="soNgaykeDon"
+            id="field_soNgaykeDon"
+            data-cy="soNgaykeDon"
+            formControlName="soNgaykeDon"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.khoThuoc" for="field_khoThuoc">Kho Thuoc</label>
+          <input type="checkbox" class="form-check" name="khoThuoc" id="field_khoThuoc" data-cy="khoThuoc" formControlName="khoThuoc" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.thuoc" for="field_thuoc">Thuoc</label>
+          <select class="form-control" id="field_thuoc" data-cy="thuoc" name="thuoc" formControlName="thuoc">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="thuocOption.id === editForm.get('thuoc')!.value?.id ? editForm.get('thuoc')!.value : thuocOption"
+              *ngFor="let thuocOption of thuocsCollection; trackBy: trackThuocById"
+            >
+              {{ thuocOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.hoaDon" for="field_hoaDon">Hoa Don</label>
+          <select class="form-control" id="field_hoaDon" data-cy="hoaDon" name="hoaDon" formControlName="hoaDon">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="hoaDonOption.id === editForm.get('hoaDon')!.value?.id ? editForm.get('hoaDon')!.value : hoaDonOption"
+              *ngFor="let hoaDonOption of hoaDonsCollection; trackBy: trackHoaDonById"
+            >
+              {{ hoaDonOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.toaThuoc.benhNhan" for="field_benhNhan">Benh Nhan</label>
+          <select class="form-control" id="field_benhNhan" data-cy="benhNhan" name="benhNhan" formControlName="benhNhan">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="benhNhanOption.id === editForm.get('benhNhan')!.value?.id ? editForm.get('benhNhan')!.value : benhNhanOption"
+              *ngFor="let benhNhanOption of benhNhansSharedCollection; trackBy: trackBenhNhanById"
+            >
+              {{ benhNhanOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

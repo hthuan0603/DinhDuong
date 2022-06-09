@@ -1,0 +1,128 @@
+<div>
+  <h2 id="page-heading" data-cy="HoTroHeading">
+    <span jhiTranslate="dinhDuongApp.hoTro.home.title">Ho Tros</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.hoTro.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ho-tro"
+        [routerLink]="['/ho-tro/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.hoTro.home.createLabel"> Create a new Ho Tro </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="hoTros?.length === 0">
+    <span jhiTranslate="dinhDuongApp.hoTro.home.notFound">No hoTros found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="hoTros && hoTros.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="maNoiDung">
+            <span jhiTranslate="dinhDuongApp.hoTro.maNoiDung">Ma Noi Dung</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ngayTao">
+            <span jhiTranslate="dinhDuongApp.hoTro.ngayTao">Ngay Tao</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nhanVienCV">
+            <span jhiTranslate="dinhDuongApp.hoTro.nhanVienCV">Nhan Vien CV</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="kyThuatHoTro">
+            <span jhiTranslate="dinhDuongApp.hoTro.kyThuatHoTro">Ky Thuat Ho Tro</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="vatTuHoTro">
+            <span jhiTranslate="dinhDuongApp.hoTro.vatTuHoTro">Vat Tu Ho Tro</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="soBnKhamDieuTri">
+            <span jhiTranslate="dinhDuongApp.hoTro.soBnKhamDieuTri">So Bn Kham Dieu Tri</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="soBnPhauThuat">
+            <span jhiTranslate="dinhDuongApp.hoTro.soBnPhauThuat">So Bn Phau Thuat</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="soCanBoChuyenGiao">
+            <span jhiTranslate="dinhDuongApp.hoTro.soCanBoChuyenGiao">So Can Bo Chuyen Giao</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ketQuaCongTac">
+            <span jhiTranslate="dinhDuongApp.hoTro.ketQuaCongTac">Ket Qua Cong Tac</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="chiDaoTuyen.id">
+            <span jhiTranslate="dinhDuongApp.hoTro.chiDaoTuyen">Chi Dao Tuyen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hoTro of hoTros; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ho-tro', hoTro.id, 'view']">{{ hoTro.id }}</a>
+          </td>
+          <td>{{ hoTro.maNoiDung }}</td>
+          <td>{{ hoTro.ngayTao | formatMediumDatetime }}</td>
+          <td>{{ hoTro.nhanVienCV }}</td>
+          <td>{{ hoTro.kyThuatHoTro }}</td>
+          <td>{{ hoTro.vatTuHoTro }}</td>
+          <td>{{ hoTro.soBnKhamDieuTri }}</td>
+          <td>{{ hoTro.soBnPhauThuat }}</td>
+          <td>{{ hoTro.soCanBoChuyenGiao }}</td>
+          <td>{{ hoTro.ketQuaCongTac }}</td>
+          <td>
+            <div *ngIf="hoTro.chiDaoTuyen">
+              <a [routerLink]="['/chi-dao-tuyen', hoTro.chiDaoTuyen?.id, 'view']">{{ hoTro.chiDaoTuyen?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/ho-tro', hoTro.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/ho-tro', hoTro.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(hoTro)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="hoTros && hoTros.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

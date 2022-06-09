@@ -1,0 +1,227 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-danh-gia-can-thiep-dd-heading"
+        data-cy="DanhGiaCanThiepDDCreateUpdateHeading"
+        jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.home.createOrEditLabel"
+      >
+        Create or edit a Danh Gia Can Thiep DD
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.chuanDoanLS" for="field_chuanDoanLS">Chuan Doan LS</label>
+          <input
+            type="text"
+            class="form-control"
+            name="chuanDoanLS"
+            id="field_chuanDoanLS"
+            data-cy="chuanDoanLS"
+            formControlName="chuanDoanLS"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.bSDieuTri" for="field_bSDieuTri">B S Dieu Tri</label>
+          <input type="text" class="form-control" name="bSDieuTri" id="field_bSDieuTri" data-cy="bSDieuTri" formControlName="bSDieuTri" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.thayDoiCanNangTrong1Thang"
+            for="field_thayDoiCanNangTrong1Thang"
+            >Thay Doi Can Nang Trong 1 Thang</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="thayDoiCanNangTrong1Thang"
+            id="field_thayDoiCanNangTrong1Thang"
+            data-cy="thayDoiCanNangTrong1Thang"
+            formControlName="thayDoiCanNangTrong1Thang"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCN" for="field_danhGiaCN">Danh Gia CN</label>
+          <input type="number" class="form-control" name="danhGiaCN" id="field_danhGiaCN" data-cy="danhGiaCN" formControlName="danhGiaCN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.khauPhanAn" for="field_khauPhanAn">Khau Phan An</label>
+          <input
+            type="text"
+            class="form-control"
+            name="khauPhanAn"
+            id="field_khauPhanAn"
+            data-cy="khauPhanAn"
+            formControlName="khauPhanAn"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaKPA" for="field_danhGiaKPA">Danh Gia KPA</label>
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaKPA"
+            id="field_danhGiaKPA"
+            data-cy="danhGiaKPA"
+            formControlName="danhGiaKPA"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.trieuChungTieuHoa" for="field_trieuChungTieuHoa"
+            >Trieu Chung Tieu Hoa</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="trieuChungTieuHoa"
+            id="field_trieuChungTieuHoa"
+            data-cy="trieuChungTieuHoa"
+            formControlName="trieuChungTieuHoa"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.mucDo" for="field_mucDo">Muc Do</label>
+          <input type="text" class="form-control" name="mucDo" id="field_mucDo" data-cy="mucDo" formControlName="mucDo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaMD" for="field_danhGiaMD">Danh Gia MD</label>
+          <input type="number" class="form-control" name="danhGiaMD" id="field_danhGiaMD" data-cy="danhGiaMD" formControlName="danhGiaMD" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.giamChucNangHoatDong" for="field_giamChucNangHoatDong"
+            >Giam Chuc Nang Hoat Dong</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giamChucNangHoatDong"
+            id="field_giamChucNangHoatDong"
+            data-cy="giamChucNangHoatDong"
+            formControlName="giamChucNangHoatDong"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaCNHD" for="field_danhGiaCNHD">Danh Gia CNHD</label>
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaCNHD"
+            id="field_danhGiaCNHD"
+            data-cy="danhGiaCNHD"
+            formControlName="danhGiaCNHD"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.stress" for="field_stress">Stress</label>
+          <input type="text" class="form-control" name="stress" id="field_stress" data-cy="stress" formControlName="stress" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaStress" for="field_danhGiaStress"
+            >Danh Gia Stress</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaStress"
+            id="field_danhGiaStress"
+            data-cy="danhGiaStress"
+            formControlName="danhGiaStress"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.refeeding" for="field_refeeding">Refeeding</label>
+          <input type="checkbox" class="form-check" name="refeeding" id="field_refeeding" data-cy="refeeding" formControlName="refeeding" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.danhGiaRefeeding" for="field_danhGiaRefeeding"
+            >Danh Gia Refeeding</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaRefeeding"
+            id="field_danhGiaRefeeding"
+            data-cy="danhGiaRefeeding"
+            formControlName="danhGiaRefeeding"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.tongDiem" for="field_tongDiem">Tong Diem</label>
+          <input type="number" class="form-control" name="tongDiem" id="field_tongDiem" data-cy="tongDiem" formControlName="tongDiem" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.phieuSuatAn" for="field_phieuSuatAn">Phieu Suat An</label>
+          <select class="form-control" id="field_phieuSuatAn" data-cy="phieuSuatAn" name="phieuSuatAn" formControlName="phieuSuatAn">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                phieuSuatAnOption.id === editForm.get('phieuSuatAn')!.value?.id ? editForm.get('phieuSuatAn')!.value : phieuSuatAnOption
+              "
+              *ngFor="let phieuSuatAnOption of phieuSuatAnsCollection; trackBy: trackPhieuSuatAnById"
+            >
+              {{ phieuSuatAnOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.danhGiaCanThiepDD.toaThuoc" for="field_toaThuoc">Toa Thuoc</label>
+          <select class="form-control" id="field_toaThuoc" data-cy="toaThuoc" name="toaThuoc" formControlName="toaThuoc">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="toaThuocOption.id === editForm.get('toaThuoc')!.value?.id ? editForm.get('toaThuoc')!.value : toaThuocOption"
+              *ngFor="let toaThuocOption of toaThuocsCollection; trackBy: trackToaThuocById"
+            >
+              {{ toaThuocOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

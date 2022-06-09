@@ -1,0 +1,123 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-phieu-suat-an-heading"
+        data-cy="PhieuSuatAnCreateUpdateHeading"
+        jhiTranslate="dinhDuongApp.phieuSuatAn.home.createOrEditLabel"
+      >
+        Create or edit a Phieu Suat An
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.tenDv" for="field_tenDv">Ten Dv</label>
+          <input type="text" class="form-control" name="tenDv" id="field_tenDv" data-cy="tenDv" formControlName="tenDv" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.maDV" for="field_maDV">Ma DV</label>
+          <input type="text" class="form-control" name="maDV" id="field_maDV" data-cy="maDV" formControlName="maDV" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.maTheBHYT" for="field_maTheBHYT">Ma The BHYT</label>
+          <input type="text" class="form-control" name="maTheBHYT" id="field_maTheBHYT" data-cy="maTheBHYT" formControlName="maTheBHYT" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.tGSuDung" for="field_tGSuDung">T G Su Dung</label>
+          <div class="d-flex">
+            <input
+              id="field_tGSuDung"
+              data-cy="tGSuDung"
+              type="datetime-local"
+              class="form-control"
+              name="tGSuDung"
+              formControlName="tGSuDung"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.tGChiDinh" for="field_tGChiDinh">T G Chi Dinh</label>
+          <div class="d-flex">
+            <input
+              id="field_tGChiDinh"
+              data-cy="tGChiDinh"
+              type="datetime-local"
+              class="form-control"
+              name="tGChiDinh"
+              formControlName="tGChiDinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoan" for="field_chuanDoan">Chuan Doan</label>
+          <input type="text" class="form-control" name="chuanDoan" id="field_chuanDoan" data-cy="chuanDoan" formControlName="chuanDoan" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoanKT" for="field_chuanDoanKT">Chuan Doan KT</label>
+          <input
+            type="text"
+            class="form-control"
+            name="chuanDoanKT"
+            id="field_chuanDoanKT"
+            data-cy="chuanDoanKT"
+            formControlName="chuanDoanKT"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.ghiChu" for="field_ghiChu">Ghi Chu</label>
+          <input type="text" class="form-control" name="ghiChu" id="field_ghiChu" data-cy="ghiChu" formControlName="ghiChu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.phieuSuatAn.hoaDon" for="field_hoaDon">Hoa Don</label>
+          <select class="form-control" id="field_hoaDon" data-cy="hoaDon" name="hoaDon" formControlName="hoaDon">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="hoaDonOption.id === editForm.get('hoaDon')!.value?.id ? editForm.get('hoaDon')!.value : hoaDonOption"
+              *ngFor="let hoaDonOption of hoaDonsCollection; trackBy: trackHoaDonById"
+            >
+              {{ hoaDonOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="toaThuoc">
+      <h2 data-cy="toaThuocDetailsHeading"><span jhiTranslate="dinhDuongApp.toaThuoc.detail.title">Toa Thuoc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ toaThuoc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.iCD10">I CD 10</span></dt>
+        <dd>
+          <span>{{ toaThuoc.iCD10 }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.maBA">Ma BA</span></dt>
+        <dd>
+          <span>{{ toaThuoc.maBA }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.maBN">Ma BN</span></dt>
+        <dd>
+          <span>{{ toaThuoc.maBN }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.loaiThuoc">Loai Thuoc</span></dt>
+        <dd>
+          <span>{{ toaThuoc.loaiThuoc }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.doiTuong">Doi Tuong</span></dt>
+        <dd>
+          <span>{{ toaThuoc.doiTuong }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.tiLe">Ti Le</span></dt>
+        <dd>
+          <span>{{ toaThuoc.tiLe }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.soNgayHenTaiKham">So Ngay Hen Tai Kham</span></dt>
+        <dd>
+          <span>{{ toaThuoc.soNgayHenTaiKham }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.capPhieuHenKham">Cap Phieu Hen Kham</span></dt>
+        <dd>
+          <span>{{ toaThuoc.capPhieuHenKham }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.loiDanBacSi">Loi Dan Bac Si</span></dt>
+        <dd>
+          <span>{{ toaThuoc.loiDanBacSi }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.ngayChiDinh">Ngay Chi Dinh</span></dt>
+        <dd>
+          <span>{{ toaThuoc.ngayChiDinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.ngayDung">Ngay Dung</span></dt>
+        <dd>
+          <span>{{ toaThuoc.ngayDung | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.soNgaykeDon">So Ngayke Don</span></dt>
+        <dd>
+          <span>{{ toaThuoc.soNgaykeDon }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.khoThuoc">Kho Thuoc</span></dt>
+        <dd>
+          <span>{{ toaThuoc.khoThuoc }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.thuoc">Thuoc</span></dt>
+        <dd>
+          <div *ngIf="toaThuoc.thuoc">
+            <a [routerLink]="['/thuoc', toaThuoc.thuoc?.id, 'view']">{{ toaThuoc.thuoc?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.hoaDon">Hoa Don</span></dt>
+        <dd>
+          <div *ngIf="toaThuoc.hoaDon">
+            <a [routerLink]="['/hoa-don', toaThuoc.hoaDon?.id, 'view']">{{ toaThuoc.hoaDon?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.toaThuoc.benhNhan">Benh Nhan</span></dt>
+        <dd>
+          <div *ngIf="toaThuoc.benhNhan">
+            <a [routerLink]="['/benh-nhan', toaThuoc.benhNhan?.id, 'view']">{{ toaThuoc.benhNhan?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/toa-thuoc', toaThuoc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="chiDaoTuyen">
+      <h2 data-cy="chiDaoTuyenDetailsHeading"><span jhiTranslate="dinhDuongApp.chiDaoTuyen.detail.title">Chi Dao Tuyen</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.maCdt">Ma Cdt</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.maCdt }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.soQuyetDinh">So Quyet Dinh</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.soQuyetDinh }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.ngayQuyetDinh">Ngay Quyet Dinh</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.ngayQuyetDinh | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.soHD">So HD</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.soHD }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.ngayHD">Ngay HD</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.ngayHD | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.lyDoCT">Ly Do CT</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.lyDoCT }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.noiDung">Noi Dung</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.noiDung }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.noiCongTac">Noi Cong Tac</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.noiCongTac }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.ngayBatDau">Ngay Bat Dau</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.ngayBatDau | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.ngayKetThuc">Ngay Ket Thuc</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.ngayKetThuc | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.ghiChu">Ghi Chu</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.ghiChu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.noiDungHoTro">Noi Dung Ho Tro</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.noiDungHoTro }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.baoCaoTaiChinh">Bao Cao Tai Chinh</span></dt>
+        <dd>
+          <span>{{ chiDaoTuyen.baoCaoTaiChinh }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.lyDoCongTac">Ly Do Cong Tac</span></dt>
+        <dd>
+          <div *ngIf="chiDaoTuyen.lyDoCongTac">
+            <a [routerLink]="['/ly-do-cong-tac', chiDaoTuyen.lyDoCongTac?.id, 'view']">{{ chiDaoTuyen.lyDoCongTac?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.chiDaoTuyen.nhanVienTiepNhan">Nhan Vien Tiep Nhan</span></dt>
+        <dd>
+          <div *ngIf="chiDaoTuyen.nhanVienTiepNhan">
+            <a [routerLink]="['/nhan-vien-tiep-nhan', chiDaoTuyen.nhanVienTiepNhan?.id, 'view']">{{ chiDaoTuyen.nhanVienTiepNhan?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/chi-dao-tuyen', chiDaoTuyen.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<div>
+  <h2 id="page-heading" data-cy="BaoCaoTaiChinhHeading">
+    <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.home.title">Bao Cao Tai Chinhs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-bao-cao-tai-chinh"
+        [routerLink]="['/bao-cao-tai-chinh/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.home.createLabel"> Create a new Bao Cao Tai Chinh </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="baoCaoTaiChinhs?.length === 0">
+    <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.home.notFound">No baoCaoTaiChinhs found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="baoCaoTaiChinhs && baoCaoTaiChinhs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="maBaoCao">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.maBaoCao">Ma Bao Cao</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="luuTru">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.luuTru">Luu Tru</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tienAn">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienAn">Tien An</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tienO">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienO">Tien O</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tienDiLai">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienDiLai">Tien Di Lai</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="taiLieu">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.taiLieu">Tai Lieu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="giangDay">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.giangDay">Giang Day</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="khac">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.khac">Khac</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="chiDaoTuyen.id">
+            <span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.chiDaoTuyen">Chi Dao Tuyen</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let baoCaoTaiChinh of baoCaoTaiChinhs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/bao-cao-tai-chinh', baoCaoTaiChinh.id, 'view']">{{ baoCaoTaiChinh.id }}</a>
+          </td>
+          <td>{{ baoCaoTaiChinh.maBaoCao }}</td>
+          <td>{{ baoCaoTaiChinh.luuTru }}</td>
+          <td>{{ baoCaoTaiChinh.tienAn }}</td>
+          <td>{{ baoCaoTaiChinh.tienO }}</td>
+          <td>{{ baoCaoTaiChinh.tienDiLai }}</td>
+          <td>{{ baoCaoTaiChinh.taiLieu }}</td>
+          <td>{{ baoCaoTaiChinh.giangDay }}</td>
+          <td>{{ baoCaoTaiChinh.khac }}</td>
+          <td>
+            <div *ngIf="baoCaoTaiChinh.chiDaoTuyen">
+              <a [routerLink]="['/chi-dao-tuyen', baoCaoTaiChinh.chiDaoTuyen?.id, 'view']">{{ baoCaoTaiChinh.chiDaoTuyen?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/bao-cao-tai-chinh', baoCaoTaiChinh.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/bao-cao-tai-chinh', baoCaoTaiChinh.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(baoCaoTaiChinh)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="baoCaoTaiChinhs && baoCaoTaiChinhs.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

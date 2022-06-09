@@ -1,0 +1,100 @@
+<div>
+  <h2 id="page-heading" data-cy="PhieuSuatAnHeading">
+    <span jhiTranslate="dinhDuongApp.phieuSuatAn.home.title">Phieu Suat Ans</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.phieuSuatAn.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-phieu-suat-an"
+        [routerLink]="['/phieu-suat-an/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.phieuSuatAn.home.createLabel"> Create a new Phieu Suat An </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="phieuSuatAns?.length === 0">
+    <span jhiTranslate="dinhDuongApp.phieuSuatAn.home.notFound">No phieuSuatAns found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="phieuSuatAns && phieuSuatAns.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.tenDv">Ten Dv</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.maDV">Ma DV</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.maBN">Ma BN</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.maTheBHYT">Ma The BHYT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.tGSuDung">T G Su Dung</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.tGChiDinh">T G Chi Dinh</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoan">Chuan Doan</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.chuanDoanKT">Chuan Doan KT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.ghiChu">Ghi Chu</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.phieuSuatAn.hoaDon">Hoa Don</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let phieuSuatAn of phieuSuatAns; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/phieu-suat-an', phieuSuatAn.id, 'view']">{{ phieuSuatAn.id }}</a>
+          </td>
+          <td>{{ phieuSuatAn.tenDv }}</td>
+          <td>{{ phieuSuatAn.maDV }}</td>
+          <td>{{ phieuSuatAn.maBN }}</td>
+          <td>{{ phieuSuatAn.maTheBHYT }}</td>
+          <td>{{ phieuSuatAn.tGSuDung | formatMediumDatetime }}</td>
+          <td>{{ phieuSuatAn.tGChiDinh | formatMediumDatetime }}</td>
+          <td>{{ phieuSuatAn.chuanDoan }}</td>
+          <td>{{ phieuSuatAn.chuanDoanKT }}</td>
+          <td>{{ phieuSuatAn.ghiChu }}</td>
+          <td>
+            <div *ngIf="phieuSuatAn.hoaDon">
+              <a [routerLink]="['/hoa-don', phieuSuatAn.hoaDon?.id, 'view']">{{ phieuSuatAn.hoaDon?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/phieu-suat-an', phieuSuatAn.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/phieu-suat-an', phieuSuatAn.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(phieuSuatAn)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

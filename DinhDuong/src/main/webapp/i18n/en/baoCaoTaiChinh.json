@@ -1,0 +1,32 @@
+{
+  "dinhDuongApp": {
+    "baoCaoTaiChinh": {
+      "home": {
+        "title": "Bao Cao Tai Chinhs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bao Cao Tai Chinh",
+        "createOrEditLabel": "Create or edit a Bao Cao Tai Chinh",
+        "notFound": "No Bao Cao Tai Chinhs found"
+      },
+      "created": "A new Bao Cao Tai Chinh is created with identifier {{ param }}",
+      "updated": "A Bao Cao Tai Chinh is updated with identifier {{ param }}",
+      "deleted": "A Bao Cao Tai Chinh is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bao Cao Tai Chinh {{ id }}?"
+      },
+      "detail": {
+        "title": "Bao Cao Tai Chinh"
+      },
+      "id": "ID",
+      "maBaoCao": "Ma Bao Cao",
+      "luuTru": "Luu Tru",
+      "tienAn": "Tien An",
+      "tienO": "Tien O",
+      "tienDiLai": "Tien Di Lai",
+      "taiLieu": "Tai Lieu",
+      "giangDay": "Giang Day",
+      "khac": "Khac",
+      "chiDaoTuyen": "Chi Dao Tuyen"
+    }
+  }
+}

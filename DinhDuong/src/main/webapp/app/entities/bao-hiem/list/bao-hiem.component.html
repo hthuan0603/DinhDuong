@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="BaoHiemHeading">
+    <span jhiTranslate="dinhDuongApp.baoHiem.home.title">Bao Hiems</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.baoHiem.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-bao-hiem"
+        [routerLink]="['/bao-hiem/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dinhDuongApp.baoHiem.home.createLabel"> Create a new Bao Hiem </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="baoHiems?.length === 0">
+    <span jhiTranslate="dinhDuongApp.baoHiem.home.notFound">No baoHiems found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="baoHiems && baoHiems.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.baoHiem.maTheBHYT">Ma The BHYT</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.baoHiem.doiTuong">Doi Tuong</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.baoHiem.baoHiemThanhToan">Bao Hiem Thanh Toan</span></th>
+          <th scope="col"><span jhiTranslate="dinhDuongApp.baoHiem.hoaDon">Hoa Don</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let baoHiem of baoHiems; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/bao-hiem', baoHiem.id, 'view']">{{ baoHiem.id }}</a>
+          </td>
+          <td>{{ baoHiem.maTheBHYT }}</td>
+          <td>{{ baoHiem.doiTuong }}</td>
+          <td>{{ baoHiem.baoHiemThanhToan }}</td>
+          <td>
+            <div *ngIf="baoHiem.hoaDon">
+              <a [routerLink]="['/hoa-don', baoHiem.hoaDon?.id, 'view']">{{ baoHiem.hoaDon?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/bao-hiem', baoHiem.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/bao-hiem', baoHiem.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(baoHiem)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

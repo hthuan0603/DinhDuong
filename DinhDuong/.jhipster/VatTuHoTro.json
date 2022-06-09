@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075132",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "vat_tu_ho_tro",
+  "fields": [
+    {
+      "fieldName": "maVatTu",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tenVatTu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thuTuSX",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VatTuHoTro",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hoTro",
+      "otherEntityRelationshipName": "vatTuHoTro",
+      "ownerSide": true,
+      "relationshipName": "hoTro",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

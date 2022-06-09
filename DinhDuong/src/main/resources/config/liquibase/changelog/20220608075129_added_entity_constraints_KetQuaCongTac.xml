@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity KetQuaCongTac.
+    -->
+    <changeSet id="20220608075129-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ho_tro_id"
+                                 baseTableName="ket_qua_cong_tac"
+                                 constraintName="fk_ket_qua_cong_tac__ho_tro_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ho_tro"/>
+    </changeSet>
+</databaseChangeLog>

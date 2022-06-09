@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity ChiDaoTuyen.
+    -->
+    <changeSet id="20220608075133-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ly_do_cong_tac_id"
+                                 baseTableName="chi_dao_tuyen"
+                                 constraintName="fk_chi_dao_tuyen__ly_do_cong_tac_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ly_do_cong_tac"/>
+
+        <addForeignKeyConstraint baseColumnNames="nhan_vien_tiep_nhan_id"
+                                 baseTableName="chi_dao_tuyen"
+                                 constraintName="fk_chi_dao_tuyen__nhan_vien_tiep_nhan_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nhan_vien_tiep_nhan"/>
+    </changeSet>
+</databaseChangeLog>

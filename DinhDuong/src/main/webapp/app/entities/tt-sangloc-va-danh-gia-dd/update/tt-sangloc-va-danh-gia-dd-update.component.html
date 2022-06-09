@@ -1,0 +1,176 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-tt-sangloc-va-danh-gia-dd-heading"
+        data-cy="TTSanglocVaDanhGiaDDCreateUpdateHeading"
+        jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.home.createOrEditLabel"
+      >
+        Create or edit a TT Sangloc Va Danh Gia DD
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.maBN" for="field_maBN">Ma BN</label>
+          <input type="text" class="form-control" name="maBN" id="field_maBN" data-cy="maBN" formControlName="maBN" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.mangThai" for="field_mangThai">Mang Thai</label>
+          <input type="checkbox" class="form-check" name="mangThai" id="field_mangThai" data-cy="mangThai" formControlName="mangThai" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.bMI" for="field_bMI">B MI</label>
+          <input type="number" class="form-control" name="bMI" id="field_bMI" data-cy="bMI" formControlName="bMI" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaBMI" for="field_danhGiaBMI">Danh Gia BMI</label>
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaBMI"
+            id="field_danhGiaBMI"
+            data-cy="danhGiaBMI"
+            formControlName="danhGiaBMI"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.phanTramCanNangTrong3Thang"
+            for="field_phanTramCanNangTrong3Thang"
+            >Phan Tram Can Nang Trong 3 Thang</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="phanTramCanNangTrong3Thang"
+            id="field_phanTramCanNangTrong3Thang"
+            data-cy="phanTramCanNangTrong3Thang"
+            formControlName="phanTramCanNangTrong3Thang"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaCanNang" for="field_danhGiaCanNang"
+            >Danh Gia Can Nang</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaCanNang"
+            id="field_danhGiaCanNang"
+            data-cy="danhGiaCanNang"
+            formControlName="danhGiaCanNang"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.anUongTrongTuan" for="field_anUongTrongTuan"
+            >An Uong Trong Tuan</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="anUongTrongTuan"
+            id="field_anUongTrongTuan"
+            data-cy="anUongTrongTuan"
+            formControlName="anUongTrongTuan"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaAnUong" for="field_danhGiaAnUong"
+            >Danh Gia An Uong</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="danhGiaAnUong"
+            id="field_danhGiaAnUong"
+            data-cy="danhGiaAnUong"
+            formControlName="danhGiaAnUong"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.thoiGianChiDinh" for="field_thoiGianChiDinh"
+            >Thoi Gian Chi Dinh</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_thoiGianChiDinh"
+              data-cy="thoiGianChiDinh"
+              type="datetime-local"
+              class="form-control"
+              name="thoiGianChiDinh"
+              formControlName="thoiGianChiDinh"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.nguyCoSDD" for="field_nguyCoSDD">Nguy Co SDD</label>
+          <input type="checkbox" class="form-check" name="nguyCoSDD" id="field_nguyCoSDD" data-cy="nguyCoSDD" formControlName="nguyCoSDD" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.cheDoAn" for="field_cheDoAn">Che Do An</label>
+          <input type="text" class="form-control" name="cheDoAn" id="field_cheDoAn" data-cy="cheDoAn" formControlName="cheDoAn" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dinhDuongApp.tTSanglocVaDanhGiaDD.danhGiaCanThiepDD" for="field_danhGiaCanThiepDD"
+            >Danh Gia Can Thiep DD</label
+          >
+          <select
+            class="form-control"
+            id="field_danhGiaCanThiepDD"
+            data-cy="danhGiaCanThiepDD"
+            name="danhGiaCanThiepDD"
+            formControlName="danhGiaCanThiepDD"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                danhGiaCanThiepDDOption.id === editForm.get('danhGiaCanThiepDD')!.value?.id
+                  ? editForm.get('danhGiaCanThiepDD')!.value
+                  : danhGiaCanThiepDDOption
+              "
+              *ngFor="let danhGiaCanThiepDDOption of danhGiaCanThiepDDSCollection; trackBy: trackDanhGiaCanThiepDDById"
+            >
+              {{ danhGiaCanThiepDDOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

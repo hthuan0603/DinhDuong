@@ -1,0 +1,68 @@
+{
+  "applications": "*",
+  "changelogDate": "20220609025539",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "tt_sangloc_va_danh_gia_dd",
+  "fields": [
+    {
+      "fieldName": "maBN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mangThai",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "bMI",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "danhGiaBMI",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "phanTramCanNangTrong3Thang",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "danhGiaCanNang",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "anUongTrongTuan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "danhGiaAnUong",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "thoiGianChiDinh",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nguyCoSDD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cheDoAn",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TTSanglocVaDanhGiaDD",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "danhGiaCanThiepDD",
+      "otherEntityRelationshipName": "tTSanglocVaDanhGiaDD",
+      "ownerSide": true,
+      "relationshipName": "danhGiaCanThiepDD",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

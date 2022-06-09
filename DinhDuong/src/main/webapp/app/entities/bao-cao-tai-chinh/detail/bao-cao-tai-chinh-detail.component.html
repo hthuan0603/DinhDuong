@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="baoCaoTaiChinh">
+      <h2 data-cy="baoCaoTaiChinhDetailsHeading"><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.detail.title">Bao Cao Tai Chinh</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.maBaoCao">Ma Bao Cao</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.maBaoCao }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.luuTru">Luu Tru</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.luuTru }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienAn">Tien An</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.tienAn }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienO">Tien O</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.tienO }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.tienDiLai">Tien Di Lai</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.tienDiLai }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.taiLieu">Tai Lieu</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.taiLieu }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.giangDay">Giang Day</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.giangDay }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.khac">Khac</span></dt>
+        <dd>
+          <span>{{ baoCaoTaiChinh.khac }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.baoCaoTaiChinh.chiDaoTuyen">Chi Dao Tuyen</span></dt>
+        <dd>
+          <div *ngIf="baoCaoTaiChinh.chiDaoTuyen">
+            <a [routerLink]="['/chi-dao-tuyen', baoCaoTaiChinh.chiDaoTuyen?.id, 'view']">{{ baoCaoTaiChinh.chiDaoTuyen?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/bao-cao-tai-chinh', baoCaoTaiChinh.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

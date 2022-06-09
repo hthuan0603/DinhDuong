@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ketQuaCongTac">
+      <h2 data-cy="ketQuaCongTacDetailsHeading"><span jhiTranslate="dinhDuongApp.ketQuaCongTac.detail.title">Ket Qua Cong Tac</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ketQuaCongTac.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.ketQuaCongTac.maKetQua">Ma Ket Qua</span></dt>
+        <dd>
+          <span>{{ ketQuaCongTac.maKetQua }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.ketQuaCongTac.tenKetQua">Ten Ket Qua</span></dt>
+        <dd>
+          <span>{{ ketQuaCongTac.tenKetQua }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.ketQuaCongTac.thuTuSX">Thu Tu SX</span></dt>
+        <dd>
+          <span>{{ ketQuaCongTac.thuTuSX }}</span>
+        </dd>
+        <dt><span jhiTranslate="dinhDuongApp.ketQuaCongTac.hoTro">Ho Tro</span></dt>
+        <dd>
+          <div *ngIf="ketQuaCongTac.hoTro">
+            <a [routerLink]="['/ho-tro', ketQuaCongTac.hoTro?.id, 'view']">{{ ketQuaCongTac.hoTro?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ket-qua-cong-tac', ketQuaCongTac.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

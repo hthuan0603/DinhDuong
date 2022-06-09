@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220608075131",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "noi_den_cong_tac",
+  "fields": [
+    {
+      "fieldName": "maNoiDen",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tenNoiDen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thuTuSX",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "NoiDenCongTac",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "chiDaoTuyen",
+      "otherEntityRelationshipName": "noiDenCongTac",
+      "ownerSide": true,
+      "relationshipName": "chiDaoTuyen",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

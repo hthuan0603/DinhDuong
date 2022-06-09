@@ -1,0 +1,35 @@
+{
+  "dinhDuongApp": {
+    "thuoc": {
+      "home": {
+        "title": "Thuocs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Thuoc",
+        "createOrEditLabel": "Create or edit a Thuoc",
+        "notFound": "No Thuocs found"
+      },
+      "created": "A new Thuoc is created with identifier {{ param }}",
+      "updated": "A Thuoc is updated with identifier {{ param }}",
+      "deleted": "A Thuoc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thuoc {{ id }}?"
+      },
+      "detail": {
+        "title": "Thuoc"
+      },
+      "id": "ID",
+      "tenThuoc": "Ten Thuoc",
+      "duongDung": "Duong Dung",
+      "soLuong": "So Luong",
+      "cachDung": "Cach Dung",
+      "hoatChat": "Hoat Chat",
+      "dVT": "D VT",
+      "donGia": "Don Gia",
+      "thanhTien": "Thanh Tien",
+      "loaiTTCu": "Loai TT Cu",
+      "loaiTTMoi": "Loai TT Moi",
+      "lieuDung": "Lieu Dung",
+      "kS": "K S"
+    }
+  }
+}
